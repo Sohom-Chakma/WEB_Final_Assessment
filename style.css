@@ -1,4 +1,5 @@
-/*Login Page*/
+/*Login Page
+*--------------------------*/
 .login-container {
     display: flex;
     justify-content: center;
@@ -18,7 +19,8 @@
     gap: 1rem;
 }
 
-/*Password Recovery Page*/
+/*Password Recovery Page
+*--------------------------*/
 
 .password-recovery-container {
     display: flex;
@@ -39,7 +41,8 @@
     gap: 1rem;
 }
 
-/*Register Page*/
+/*Register Page
+*--------------------------*/
 
 .register-container {
     display: flex;
@@ -60,4 +63,4 @@
     gap: 1rem;
 }
 
-/*testing asdonaosdoiasdoiashoidasoidh*/
+WHY IS GIT PUSH NOT WORKING
