@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Project Website</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">BEAN & CO</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to BEAN & CO</h1>
+        <p>Fresh Brews. Cozy Vibes. Great Food.</p>
+        <a href="about.html" class="btn">Explore</a>
+    </section>
+
+    <footer>
+        <p>© 2025 WEB1201 Group Project. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Times New Roman', Times, serif;"
+}
+body { 
+    background: url;
+ background-size: cover;
+ background-attachment: fixed;
+ background-position:center;
+ background: #f3d5b5;
+ color: #bc8a5f;
+ font-family:"Georgia",sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #3b2516;
+  border-bottom: 4px solid #a77a49;
+}
+.logo {
+  color: #f2e8da;
+  letter-spacing: 2px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #f2e8da;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: #d7b48a;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(40, 26, 18, 0.5), rgba(40, 26, 18, 0.5)), url('images/wood-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #f9f2e9;
+  padding: 20px;
+}
+.hero h1 {
+  font-size: 48px;
+  text-shadow: 2px 2px 4px #2a1a12;
+  letter-spacing: 1.5px;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* BUTTON */
+.btn {
+  padding: 12px 28px;
+  background: #a9744f;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 18px;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #8a5e3f;
+}
+
+/* FOOTER */
+footer {
+  background: #3b2516;
+  color: #f2e8da;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 4px solid #a77a49;
+}
+
+/* CV PAGE */
+.cv-container {
+  display: flex;
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #fff8ee;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cv-left {
+  width: 35%;
+  background: #a9744f;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+.cv-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.cv-name {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.cv-role {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+.cv-right {
+  width: 65%;
+  padding: 40px;
+  font-family: "Georgia", serif;
+  color: #3e2a1d;
+}
+.cv-right h3 {
+  border-bottom: 2px solid #a9744f;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.cv-right ul {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+  .hero h1 {
+    font-size: 30px;
+  }
+  .cv-container {
+    flex-direction: column;
+  }
+  .cv-left, .cv-right {
+    width: 100%;
+  }
+}
+</style>
+
+<!-- ============================ -->
+<!-- script.js (BASIC FUNCTIONS) -->
+<!-- ============================ -->
+<script>
+// Sample JS functions recommended for your project
+function validateContact() {
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let message = document.getElementById('message');
+    let error = document.getElementById('error');
+
+    if (name.value === '' || email.value === '' || message.value === '') {
+        error.innerText = 'Please fill in all fields.';
+        error.style.color = 'red';
+        return false;
+    }
+
+    if (!email.value.includes('@')) {
+        error.innerText = 'Enter a valid email address';
+        return false;
+    }
+
+    error.innerText = 'Message sent successfully!';
+    error.style.color = 'green';
+    return true;
+}
+</script>
