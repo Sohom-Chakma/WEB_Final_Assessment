@@ -2,41 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <title>Title</title>
+    <style>
+        .form-container {
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
+        }
+        tr {
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px 28px;
+            background: #a9744f;
+            color: #fff;
+            border-radius: 6px;
+            margin-top: 18px;
+            display: inline-block;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            transition: 0.3s;
+            horiz-align: right;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="login-container">
-        <form method="get">
-            <h2>Login</h2>
+<div class="form-container">
+    <h2>Login</h2>
 
-            <div class="login-box">
-                <input type="text" name="email"
-                       placeholder="Email" required>
-            </div>
+    <form>
+        <table>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" placeholder="Email"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="Password"></td>
+            </tr>
+        </table>
+    </form>
 
-            <div class="password-box">
-                <input type="password" name="password"
-                       placeholder="Password" required>
-            </div>
+    <button style="text-align: right">Login</button>
+</div>
 
-            <button type="submit">Login</button>
-
-            <div class="forgot-link">
-                <a href="forgot-password.html">Forgot Password?</a>
-            </div>
-
-            OR
-
-            <div>
-                <a href="signup.html">Register</a>
-            </div>
-
-
-
-        </form>
-    </div>
 </body>
 </html>

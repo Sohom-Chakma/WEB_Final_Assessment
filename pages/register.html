@@ -2,46 +2,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <title>Title</title>
+    <style>
+        .form-container {
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
+        }
+        tr {
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px 28px;
+            background: #a9744f;
+            color: #fff;
+            border-radius: 6px;
+            margin-top: 18px;
+            display: inline-block;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            transition: 0.3s;
+            horiz-align: right;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="register-container">
-        <form method="get">
-            <h2>Register</h2>
+<div class="form-container">
+    <h2>Registration</h2>
+    <p>Complete the form for registration.</p>
+    <form>
+        <table>
+            <tr>
+                <td class="row name-row">First Name</td>
+                <td>
+                    <input type="text" placeholder="First Name" id="firstName" name="first_name" required>
+                    <input type="text" placeholder="Middle Name" id="middleName" name="middle_name">
+                    <input type="text" placeholder="Last Name" id="lastName" name="last_name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" placeholder="myname@example.com" name="email" id="email" required>
+                </td>
+            </tr>
 
-            <div class="first-name-box">
-                <input type="text" name="first-name"
-                       placeholder="First name" required>
-            </div>
+            <tr>
+                <td>Phone No.</td>
+                <td>
+                    <select id="areaCode" name="areaCode" required>
+                        <option value="60">60</option>
+                        <option value="65">65</option>
+                        <option value="66">66</option>
+                    </select>
+                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+                </td>
+            </tr>
 
-            <div class="last-name-box">
-                <input type="text" name="last-name"
-                       placeholder="Last name" required>
-            </div>
+            <tr class="row address-row">
+                <td rowspan="5">Address</td>
+            </tr>
 
-            <div class="age-box">
-                <input type="number" name="age"
-                       placeholder="Age" required>
-            </div>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Street Address Line 1" required>
+                </td>
+            </tr>
 
-            <div class="email-box">
-                <input type="text" name="email"
-                       placeholder="Email" required>
-            </div>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Street Address Line 2">
+                </td>
+            </tr>
 
-            <div class="phone-box">
-                <input type="number" name="phone-number"
-                       placeholder="Phone No." required>
-            </div>
+            <tr>
+                <td>
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="State / Province" required>
+                </td>
+            </tr>
 
-            <button type="submit">Create Account</button>
+            <tr>
+                <td>
+                    <input type="number" placeholder="Zip / Postal Code" required>
+                </td>
+            </tr>
 
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <select name="birthDay" id="birthDay" required></select>
+                    <select name="birthMonth" id="birthMonth" required>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select name="birthYear" id="birthYear" required>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                    </select>
+                </td>
+            </tr>
 
+            <tr>
+                <td class="row heard-row" rowspan="6">Where did you hear about us?</td>
+            </tr>
 
-        </form>
+            <tr>
+                <td>
+                    <input type="checkbox" name="heardAboutUs" value="searchengine"> Search Engine
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox" name="heardAboutUs" value="friend"> Friend
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox" name="heardAboutUs" value="article/blog"> Article/Blog
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox" name="heardAboutUs" value="institution"> Institution
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox" value="other" name="heardAboutUs"> Other
+                </td>
+            </tr>
+        </table>
+
+    </form>
+    <div>
+        <button type="submit">Sign Up</button>
     </div>
+
+</div>
+
 </body>
 </html>
