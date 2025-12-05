@@ -1,8 +1,8 @@
-/* Polished signup styles */
+
 :root {
     --bg: #fdf6f0;
     --text: #333333;
-    --accent: #d2691e; /* chocolate */
+    --accent: #d2691e; 
     --accent-dark: #b35415;
     --muted: #8b4513;
     --card: #ffffff;
@@ -11,7 +11,7 @@
     --gap: 1rem;
 }
 
-/* Global */
+
 *,
 *::before,
 *::after {
@@ -102,7 +102,7 @@ body {
     animation: fadeIn 900ms ease-in-out both;
 }
 
-/* Positioned responsive image used as background but kept semantic as decorative */
+
 .hero-media {
     position: absolute;
     inset: 0;
@@ -132,7 +132,6 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Signup Form */
 .form-container {
     display: flex;
     justify-content: center;
@@ -254,14 +253,14 @@ button:focus {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Accessibility: prefers-reduced-motion */
+
 @media (prefers-reduced-motion: reduce) {
     .hero-content, form {
         animation: none !important;
     }
 }
 
-/* Responsive tweaks */
+
 @media (max-width: 600px) {
     .name-group input,
     .address-group input,
