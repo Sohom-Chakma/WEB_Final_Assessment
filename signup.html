@@ -14,10 +14,9 @@
             <!-- Minimal header for context -->
         </header>
 
-        <!-- Hero Section -->
+   
         <section class="hero" aria-labelledby="hero-title">
-            <!-- Responsive local hero image: put files in `images/` folder (hero-1400.jpg, hero-800.jpg)
-                     The image is decorative so `alt` is empty and `aria-hidden` is true. -->
+        
             <picture class="hero-media" aria-hidden="true">
                 <source srcset="images/hero-1400.jpg 1400w, images/hero-800.jpg 800w" sizes="(max-width:600px) 100vw, 1400px">
                 <img src="images/hero-1400.jpg" alt="" class="hero-img" decoding="async" loading="lazy">
@@ -29,7 +28,7 @@
             </div>
         </section>
 
-        <!-- Signup Form -->
+
         <main id="main">
             <div class="form-container">
                 <form id="signupForm" action="#" method="post" aria-labelledby="signup-title">
@@ -51,13 +50,13 @@
                         <input id="lastName" name="family-name" type="text" placeholder="Last Name" autocomplete="family-name" required>
                     </fieldset>
 
-                    <!-- Email -->
+              
                     <div>
                         <label for="email" class="sr-only">Email address</label>
                         <input id="email" name="email" type="email" placeholder="Email" autocomplete="email" required>
                     </div>
 
-                    <!-- Phone -->
+           
                     <div class="phone-group">
                         <label for="areaCode" class="sr-only">Country code</label>
                         <select id="areaCode" name="areaCode" aria-label="Country code">
@@ -70,7 +69,6 @@
                         <input id="phoneNumber" name="tel" type="tel" pattern="[0-9+\-()\s]{6,20}" placeholder="Phone Number" autocomplete="tel" required>
                     </div>
 
-                    <!-- Address -->
                     <fieldset class="address-group">
                         <legend class="sr-only">Address</legend>
 
@@ -90,7 +88,7 @@
                         <input id="postal" name="postal-code" type="text" placeholder="Zip / Postal Code" autocomplete="postal-code" required>
                     </fieldset>
 
-                    <!-- Date of Birth -->
+           
                     <div class="dob-group">
                         <label class="sr-only" for="birthDay">Date of birth</label>
                         <select id="birthDay" name="birthDay" aria-label="Birth day" required></select>
@@ -111,7 +109,6 @@
                         <select id="birthYear" name="birthYear" aria-label="Birth year" required></select>
                     </div>
 
-                    <!-- Heard About Us -->
                     <fieldset class="heard-group">
                       <legend>Where did you hear about us?</legend>
                       <label for="heard_search"><input id="heard_search" name="heardAboutUs[]" type="checkbox" value="searchengine"> Search Engine</label>
@@ -126,7 +123,7 @@
         </main>
 
         <script>
-            // Populate day (1-31) and year (e.g., 1900..currentYear)
+            
             (function populateDOB(){
                 var day = document.getElementById('birthDay');
                 var year = document.getElementById('birthYear');
