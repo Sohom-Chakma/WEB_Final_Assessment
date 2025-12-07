@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Times New Roman', Times, serif;",serif
+            font-family: "Times New Roman", Times, serif;
         }
 
         body {
@@ -33,10 +33,18 @@
         h2 {
             text-align: center;
             margin-bottom: 20px;
+            color: #333;
         }
 
         .input-row {
             margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
         }
 
         input {
@@ -45,6 +53,15 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #C15F3C;
+        }
+
+        input.error {
+            border-color: #dc3545;
         }
 
         button[type="submit"] {
@@ -57,10 +74,102 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #a04d2f;
+        }
+
+        button[type="submit"]:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .links-row {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
         }
 
         a {
             color: #C15F3C;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+            font-size: 14px;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+            font-size: 14px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .divider {
+            margin: 0 8px;
+            color: #999;
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        .password-toggle-btn:hover {
+            color: #C15F3C;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -73,14 +182,20 @@
             <h2>Login to Bean & Co.</h2>
         </div>
 
+        <div id="error-message" class="error-message"></div>
+        <div id="success-message" class="success-message">
+            Login successful! Redirecting...
+        </div>
+
         <div class="form-container">
-            <form>
+            <form id="login-form">
                 <div class="input-row">
                     <label id="email-header" for="email-input">
                         Email
                     </label>
                     <input
-                            type="email" name="email"
+                            type="email"
+                            name="email"
                             placeholder="Email"
                             id="email-input"
                             autocomplete="email"
@@ -92,20 +207,31 @@
                     <label id="password-header" for="password-input">
                         Password
                     </label>
-                    <input
-                            type="password" name="password"
-                            placeholder="Password"
-                            id="password-input"
-                            autocomplete="current-password"
-                            required
-                    >
+                    <div class="password-toggle">
+                        <input
+                                type="password"
+                                name="password"
+                                placeholder="Password"
+                                id="password-input"
+                                autocomplete="current-password"
+                                required
+                        >
+                        <button type="button" class="password-toggle-btn" id="toggle-password">
+                            Show
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-row remember-me">
+                    <input type="checkbox" id="remember-me" name="remember">
+                    <label for="remember-me" style="margin-bottom: 0;">Remember me</label>
                 </div>
 
                 <button class="input-row" type="submit">Login</button>
 
-                <div class="input-row">
+                <div class="links-row">
                     <a href="/pages/forgot-password.html">Forgot Password?</a>
-                    |
+                    <span class="divider">|</span>
                     <a href="/pages/register.html">Create account</a>
                 </div>
             </form>
@@ -113,6 +239,79 @@
 
     </section>
 </main>
+
+<script>
+    // Password toggle functionality
+    const togglePassword = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password-input');
+
+    togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.textContent = type === 'password' ? 'Show' : 'Hide';
+    });
+
+    // Simulated login validation (demo only)
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email-input').value;
+        const password = document.getElementById('password-input').value;
+        const rememberMe = document.getElementById('remember-me').checked;
+
+        const errorMessage = document.getElementById('error-message');
+        const successMessage = document.getElementById('success-message');
+
+        // Hide previous messages
+        errorMessage.classList.remove('show');
+        successMessage.classList.remove('show');
+
+        // Remove error styling
+        document.getElementById('email-input').classList.remove('error');
+        document.getElementById('password-input').classList.remove('error');
+
+        // Validate email
+        if (!email || !email.includes('@') || !email.includes('.')) {
+            errorMessage.textContent = 'Please enter a valid email address';
+            errorMessage.classList.add('show');
+            document.getElementById('email-input').classList.add('error');
+            return;
+        }
+
+        // Validate password
+        if (!password || password.length < 6) {
+            errorMessage.textContent = 'Password must be at least 6 characters';
+            errorMessage.classList.add('show');
+            document.getElementById('password-input').classList.add('error');
+            return;
+        }
+
+        // Demo: Accept any valid email/password combination
+        // In a real app, this would check against a backend
+        successMessage.classList.add('show');
+
+        // Store remember me preference (demo)
+        if (rememberMe) {
+            console.log('Remember me enabled');
+        }
+
+        // Simulate redirect after 1.5 seconds
+        setTimeout(function() {
+            // In a real app, this would redirect to the dashboard/homepage
+            console.log('Login successful for:', email);
+            // window.location.href = '/homepage';
+        }, 1500);
+    });
+
+    // Clear error styling on input
+    document.getElementById('email-input').addEventListener('input', function() {
+        this.classList.remove('error');
+    });
+
+    document.getElementById('password-input').addEventListener('input', function() {
+        this.classList.remove('error');
+    });
+</script>
 
 </body>
 </html>

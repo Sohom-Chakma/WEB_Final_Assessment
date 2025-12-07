@@ -2,144 +2,328 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Register | Bean & Co</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        body {
+            background: #d7b48a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .login-section {
+            background: white;
+            border-radius: 8px;
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-row {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #C15F3C;
+        }
+
+        .name-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .name-row .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #C15F3C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #a04d2f;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        a {
+            color: #C15F3C;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+            font-size: 14px;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+            font-size: 14px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .password-requirements {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
 
-<div class="form-container">
-    <h2>Registration</h2>
-    <h3>Complete the form for registration.</h3>
-    <form>
-        <table>
-            <tr>
-                <td class="row name-row">First Name</td>
-                <td>
-                    <input type="text" placeholder="First Name" id="firstName" name="first_name" required>
-                    <input type="text" placeholder="Middle Name" id="middleName" name="middle_name">
-                    <input type="text" placeholder="Last Name" id="lastName" name="last_name" required>
-                </td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>
-                    <input type="email" placeholder="example@email.com" name="email" id="email" required>
-                </td>
-            </tr>
+<!--Register page -->
+<main>
+    <section class="login-section">
+        <div class="row header-block" id="form-name">
+            <h2>Create Your Account</h2>
+        </div>
 
-            <tr>
-                <td>Phone No.</td>
-                <td>
-                    <select id="areaCode" name="areaCode" required>
-                        <option value="60">60</option>
-                        <option value="65">65</option>
-                        <option value="66">66</option>
-                    </select>
-                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
-                </td>
-            </tr>
+        <div id="error-message" class="error-message"></div>
+        <div id="success-message" class="success-message">
+            Account created successfully! Redirecting to login...
+        </div>
 
-            <tr class="row address-row">
-                <td rowspan="5">Address</td>
-            </tr>
+        <div class="form-container">
+            <form id="register-form">
+                <div class="name-row">
+                    <div class="input-group">
+                        <label for="first-name">First Name</label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                id="first-name"
+                                placeholder="First name"
+                                autocomplete="given-name"
+                                required
+                        >
+                    </div>
+                    <div class="input-group">
+                        <label for="last-name">Last Name</label>
+                        <input
+                                type="text"
+                                name="lastName"
+                                id="last-name"
+                                placeholder="Last name"
+                                autocomplete="family-name"
+                                required
+                        >
+                    </div>
+                </div>
 
-            <tr>
-                <td>
-                    <input type="text" placeholder="Street Address Line 1" required>
-                </td>
-            </tr>
+                <div class="input-row">
+                    <label for="email-input">Email</label>
+                    <input
+                            type="email"
+                            name="email"
+                            id="email-input"
+                            placeholder="Email"
+                            autocomplete="email"
+                            required
+                    >
+                </div>
 
-            <tr>
-                <td>
-                    <input type="text" placeholder="Street Address Line 2">
-                </td>
-            </tr>
+                <div class="input-row">
+                    <label for="phone-input">Phone Number</label>
+                    <input
+                            type="tel"
+                            name="phone"
+                            id="phone-input"
+                            placeholder="Phone number"
+                            autocomplete="tel"
+                            required
+                    >
+                </div>
 
-            <tr>
-                <td>
-                    <input type="text" placeholder="City" required>
-                    <input type="text" placeholder="State / Province" required>
-                </td>
-            </tr>
+                <div class="input-row">
+                    <label for="password-input">Password</label>
+                    <input
+                            type="password"
+                            name="password"
+                            id="password-input"
+                            placeholder="Password"
+                            autocomplete="new-password"
+                            required
+                    >
+                    <div class="password-requirements">
+                        Must be at least 8 characters long
+                    </div>
+                </div>
 
-            <tr>
-                <td>
-                    <input type="number" placeholder="Zip / Postal Code" required>
-                </td>
-            </tr>
+                <div class="input-row">
+                    <label for="confirm-password-input">Confirm Password</label>
+                    <input
+                            type="password"
+                            name="confirmPassword"
+                            id="confirm-password-input"
+                            placeholder="Confirm password"
+                            autocomplete="new-password"
+                            required
+                    >
+                </div>
 
-            <tr>
-                <td>Date of Birth</td>
-                <td>
-                    <select name="birthDay" id="birthDay" required></select>
-                    <select name="birthMonth" id="birthMonth" required>
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                    </select>
-                    <select name="birthYear" id="birthYear" required>
-                        <option value="2000">2000</option>
-                        <option value="2001">2001</option>
-                        <option value="2002">2002</option>
-                        <option value="2003">2003</option>
-                        <option value="2004">2004</option>
-                        <option value="2005">2005</option>
-                        <option value="2006">2006</option>
-                        <option value="2007">2007</option>
-                    </select>
-                </td>
-            </tr>
+                <button class="input-row" type="submit">Create Account</button>
 
-            <tr>
-                <td class="row heard-row" rowspan="6">Where did you hear about us?</td>
-            </tr>
+                <div class="login-link">
+                    Already have an account? <a href="/pages/login.html">Login here</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
 
-            <tr>
-                <td>
-                    <input type="checkbox" name="heardAboutUs" value="searchengine"> Search Engine
-                </td>
-            </tr>
+<script>
+    // Simulated form validation (demo only)
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-            <tr>
-                <td>
-                    <input type="checkbox" name="heardAboutUs" value="friend"> Friend
-                </td>
-            </tr>
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const email = document.getElementById('email-input').value;
+        const phone = document.getElementById('phone-input').value;
+        const password = document.getElementById('password-input').value;
+        const confirmPassword = document.getElementById('confirm-password-input').value;
 
-            <tr>
-                <td>
-                    <input type="checkbox" name="heardAboutUs" value="article/blog"> Article/Blog
-                </td>
-            </tr>
+        const errorMessage = document.getElementById('error-message');
+        const successMessage = document.getElementById('success-message');
 
-            <tr>
-                <td>
-                    <input type="checkbox" name="heardAboutUs" value="institution"> Institution
-                </td>
-            </tr>
+        // Hide previous messages
+        errorMessage.classList.remove('show');
+        successMessage.classList.remove('show');
 
-            <tr>
-                <td>
-                    <input type="checkbox" value="other" name="heardAboutUs"> Other
-                </td>
-            </tr>
-        </table>
+        // Validate all fields are filled
+        if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
+            errorMessage.textContent = 'Please fill in all fields';
+            errorMessage.classList.add('show');
+            return;
+        }
 
-    </form>
-    <div>
-        <button type="submit">Sign Up</button>
-    </div>
+        // Validate email format
+        if (!email.includes('@') || !email.includes('.')) {
+            errorMessage.textContent = 'Please enter a valid email address';
+            errorMessage.classList.add('show');
+            return;
+        }
 
-</div>
+        // Validate password length
+        if (password.length < 8) {
+            errorMessage.textContent = 'Password must be at least 8 characters long';
+            errorMessage.classList.add('show');
+            return;
+        }
+
+        // Validate passwords match
+        if (password !== confirmPassword) {
+            errorMessage.textContent = 'Passwords do not match';
+            errorMessage.classList.add('show');
+            return;
+        }
+
+        // Validate phone number (basic check)
+        if (phone.length < 10) {
+            errorMessage.textContent = 'Please enter a valid phone number';
+            errorMessage.classList.add('show');
+            return;
+        }
+
+        // If all validations pass
+        successMessage.classList.add('show');
+
+        // Clear form
+        document.getElementById('register-form').reset();
+
+        // Simulate redirect to login after 2 seconds
+        setTimeout(function() {
+            window.location.href = '/pages/login.html';
+        }, 2000);
+    });
+
+    // Real-time password match validation
+    document.getElementById('confirm-password-input').addEventListener('input', function() {
+        const password = document.getElementById('password-input').value;
+        const confirmPassword = this.value;
+
+        if (confirmPassword && password !== confirmPassword) {
+            this.style.borderColor = '#dc3545';
+        } else {
+            this.style.borderColor = '#ddd';
+        }
+    });
+</script>
 
 </body>
 </html>
