@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Project Website</title>
+
+    <link rel="stylesheet" href="styling.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&family=Quicksand:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script>
+        function navOpen(){
+            document.getElementById("sidepanel").style.width = "250px";
+        }
+        function navClose(){
+            document.getElementById("sidepanel").style.width = "0";
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <div class="logo"></div>
+
+    <div id="sidepanel" class="navsidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="navClose()">&times;</a>
+        <a href="homepage.html" id="menu">Home</a>
+        <a href="" id="menu">About Us</a>
+        <a href="" id="menu">Services</a>
+        <a href="" id="menu">Team</a>
+        <a href="" id="menu">Contact Us</a>
+    </div>
+
+    <button class="openbtn" onclick="navOpen()">
+        <img src="images/menu-svgrepo-com.svg" width="40px" height="40px">
+    </button>
+</header>
+
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Welcome to BEAN & CO</h1>
+        <p>Fresh Brews. Cozy Vibes. Great Food.</p>
+        <a href="menu.html" class="btn">Explore</a>
+    </section>
+
+
+    <!-- SIGNUP / LOGIN SECTION -->
+    <section class="signup_login">
+        <div class="signup_card">
+
+            <p class="brand">— BEAN & CO —</p>
+
+            <p class="tagline">
+                A warm blend of handcrafted coffees, refreshing cold brews, and freshly baked pastries —
+                your perfect spot to relax and unwind.
+            </p>
+
+            <h3 class="signup_heading">
+                Be the first to explore new menus & enjoy a free birthday treat every year!
+            </h3>
+
+            <a href="signup.html" class="btn2">Sign Up Now</a>
+
+            <p class="login_text">
+                Already have an account?
+                <a href="login.html" id="login">Log in here</a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- MENU PREVIEW SECTION -->
+    <section id="menu_background">
+        <h2 class="headline">Our Menu</h2>
+
+        <div class="masonry">
+            <div class="menu_item">
+                <img src="images/caramel latte.jpg" alt="Item">
+                <h3>Caramel Latte</h3>
+                <p>Rich, sweet & smooth.</p>
+            </div>
+
+            <div class="menu_item">
+                <img src="images/matcha frappe.jpg" alt="Item">
+                <h3>Matcha Frappe</h3>
+                <p>Icy, creamy green tea.</p>
+            </div>
+
+            <div class="menu_item">
+                <img src="images/cake1 (1).jpg" alt="Item">
+                <h3>Chocolate Tiramisu Cake</h3>
+                <p>Moist & indulgent.</p>
+            </div>
+
+            <div class="menu_item">
+                <img src="images/coldbrew.jpg" alt="Item">
+                <h3>Cold Brew</h3>
+                <p>Bold, refreshing.</p>
+            </div>
+
+            <div class="menu_item">
+                <img src="images/Strawberry-Matcha-Latte.jpg" alt="Item">
+                <h3>Strawberry Matcha</h3>
+                <p>Fruity & vibrant.</p>
+            </div>
+
+            <div class="menu_item">
+                <img src="images/cake2.jpg" alt="Item">
+                <h3>Biscoff Cheesecake</h3>
+                <p>Soft, creamy slice.</p>
+            </div>
+        </div>
+
+        <div class="menu_btn_container">
+            <a href="menu.html" class="menu_btn">View Our Full Menu</a>
+        </div>
+    </section>
+
+
+    <!-- INFO SECTION  -->
+    <section class="info">
+
+        <h2>— BEAN & CO —</h2>
+
+        <p class="tagline">
+            Your perfect spot to pause, chat, and savor handcrafted coffees, fresh pastries, and cozy vibes.
+        </p>
+    
+        <div class="info_details">
+            <p><strong>Hours:</strong> Mon: Closed | Tue–Thu: 10AM–8:30PM | Fri–Sun: 9:30AM–9:30PM</p>
+            <p><strong>Address:</strong> </p>
+            <p><strong>Contact:</strong> </p>
+        </div>
+
+        <a href="#" class="info_btn">Learn More</a>
+
+    </section>
+</main>
+
+<footer>
+    <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
+</footer>
+
+</body>
+</html>
