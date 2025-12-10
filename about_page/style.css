@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:"Times New Roman', Times, serif;";
+}
+
+/* banner */
+#banner{
+    background:url(images/cafe2.jpg);
+    background-size:cover;
+    background-position:bottom;
+    background-repeat:no-repeat;
+    height: 380px;
+    width: 100%;
+}
+
+#banner h3{
+    font-size:80px;
+    color:white;
+    text-align:center;    
+    padding:120px 50px 100px 50px;
+    text-shadow: 2px 2px 4px #3D2412;
+    letter-spacing: 1.5px;
+}
+
+/* main */
+#heading{
+    font-size:30px;
+    color:#694023;
+    text-align:center;
+    padding: 15px;
+    font-weight:bold;
+}
+
+.main{
+    font-size:20px;
+    letter-spacing:1.5px;
+    text-align:center;
+    padding:20px;
+}
+
+.img_container{
+    display:flex;
+    flex-direction: row;
+    padding:3px;
+    overflow: auto;
+}
+
+#images{
+    height: 250px;
+    width:450px;
+    padding:15px;
+    border-radius:35px;
+}
+
+#img{
+    height:300px;
+    width:100%;
+    padding:5px 30px;
+
+}
