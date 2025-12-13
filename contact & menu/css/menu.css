@@ -71,3 +71,12 @@ body {
     margin-top: 5px;
     font-weight: bold;
   }
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item {
+    width: 180px;
+  }
+}
