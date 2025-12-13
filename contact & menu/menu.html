@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu | Bean & Co</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css" type="text/css">
+    <script>
+        function filterItems(category) {
+          const items = document.querySelectorAll('.item');
+          items.forEach(item => {
+            if (category === 'all') {
+              item.style.display = 'block';
+            } else if (item.classList.contains(category)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+    
+        filterItems('all');
+      </script>
+</head>
+<body>
+  <header>
+    <h1>Our Menu</h1>
+  </header>
+    <!-- filter nav -->
+  <div class="navbar">
+    <button onclick="filterItems('beverage')">Beverages</button>
+    <button onclick="filterItems('snack')">Snacks</button>
+    <button onclick="filterItems('all')">Show All</button>
+  </div>
+
+  <div class="gallery">
+    <!-- Beverages -->
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/latte.png" alt="Latte">
+      </div>
+      <p>Latte</p>
+    </div>
+
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/tea.png" alt="Tea">
+      </div>
+      <p>Tea</p>
+    </div>
+    
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/espresso.png" alt="Espresso">
+      </div>  
+      <p>Espresso</p>
+    </div>
+
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/americano.png" alt="Americano">
+      </div>  
+      <p>Americano</p>
+    </div>
+
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/cappuccino.png" alt="Cappuccino">
+      </div>
+      <p>Cappuccino</p>
+    </div>
+
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/applejuice.png" alt="Apple Juice">
+      </div>
+      <p>Apple Juice</p>
+    </div>
+
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/orangejuice.png" alt="Orange Juice">
+      </div>
+      <p>Orange Juice</p>
+    </div>
+
+    <div class="item beverage">
+      <div class="image_wrapper">
+        <img src="images/passionfruitjuice.png" alt="Passion Fruit Juice">
+      </div>
+      <p>Passion Fruit Juice</p>
+    </div>
+
+    <!-- Snacks -->
+    <div class="item snack">
+      <div class="image_wrapper">
+        <img src="images/croissant.png" alt="Croissant">
+      </div>
+      <p>Croissant</p>
+    </div>
+
+    <div class="item snack">
+      <div class="image_wrapper">
+        <img src="images/muffin.png" alt="Muffin">
+      </div>
+      <p>Muffin</p>
+    </div>
+
+    <div class="item snack">
+      <div class="image_wrapper">
+        <img src="images/cookies.png" alt="Cookie">
+      </div>
+      <p>Cookie</p>
+    </div>
+
+    <div class="item snack">
+      <div class="image_wrapper">
+        <img src="images/cake1.jpg" alt="Tiramisu">
+      </div>
+      <p>Tiramisu</p>
+    </div>
+
+    <div class="item snack">
+      <div class="image_wrapper">
+        <img src="images/sandwiches.png" alt="Sandwiches">
+      </div>
+      <p>Sandwiches</p>
+    </div>
+
+    <div class="item snack">
+      <div class="image_wrapper">
+        <img src="images/bagel.png" alt="Bagel and Cream Cheese">
+      </div>
+      <p>Bagel & Cream Cheese</p>
+    </div>
+  </div>
+</body>
+</html>
