@@ -170,7 +170,6 @@ body {
 }
 
 .form-container h2 {
-    font-family: var(--font-heading);
     color: var(--color-light);
     font-weight: 500;
     font-size: 30px;
@@ -259,7 +258,6 @@ body {
 }
 
 .team-header h2 {
-    font-family: var(--font-heading);
     font-size: 2rem;
     color: var(--color-primary);
     margin-bottom: var(--spacing-md);
