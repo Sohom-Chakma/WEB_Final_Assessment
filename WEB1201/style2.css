@@ -1,0 +1,926 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: #d7b48a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ========================================
+   FONTS & TEXT
+   ======================================== */
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+p {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* ========================================
+   CONTAINERS FOR FORMS
+   ======================================== */
+
+.login-section {
+    background: white;
+    border-radius: 8px;
+    width: 600px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Description text (used in forgot-password) */
+.description {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* Lead text (used in team page) */
+.lead-text {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   LABELS & INPUTS
+   ======================================== */
+
+.input-row {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #C15F3C;
+}
+
+input.error {
+    border-color: #dc3545;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 24px;
+    background-color: #C15F3C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #a04d2f;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   HYPERLINKS
+   ======================================== */
+
+a {
+    color: #C15F3C;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #a04d2f;
+}
+
+.links-row {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+.divider {
+    margin: 0 8px;
+    color: #999;
+}
+
+.back-to-login {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 24px;
+}
+
+/* ========================================
+   SUCCESS & ERROR MESSAGES
+   ======================================== */
+
+.error-message,
+.success-message {
+    display: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message.show,
+.success-message.show {
+    display: block;
+}
+
+/* ========================================
+   8. PASSWORD FEATURES
+   ======================================== */
+
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.password-toggle-btn:hover {
+    color: #C15F3C;
+}
+
+.password-requirements {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* ========================================
+   REMEMBER ME CHECKBOX
+   ======================================== */
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.remember-me input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* ========================================
+   NAME FIELDS FOR REGISTER PAGE
+   ======================================== */
+
+.name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.name-row .input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   STYLING FOR TEAM PAGE
+   ======================================== */
+
+.team-section {
+    background: transparent;
+    max-width: 1400px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 60px 40px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 8px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    border: 3px solid #f5f5f5;
+}
+
+.team-card h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.team-card .role {
+    color: #C15F3C;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.team-card .responsibility {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    min-height: 60px;
+}
+
+.team-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.team-links a {
+    color: #C15F3C;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 16px;
+    border: 1px solid #C15F3C;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.team-links a:hover {
+    background-color: #C15F3C;
+    color: white;
+    text-decoration: none;
+}
+
+/* ========================================
+   VALIDATION & RESPONSIVE DESIGN JSS
+   ======================================== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 16px;
+    }
+
+    .login-section {
+        padding: 32px 24px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .team-section {
+        padding: 40px 24px;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    .login-section {
+        padding: 24px 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .name-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-section {
+        padding: 32px 16px;
+    }
+
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+/* ========================================
+   14. PRINT STYLES (Optional)
+   ======================================== */
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .login-section,
+    .team-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* CLEANED & ORGANIZED CSS FOR YOUR WEBSITE */
+
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cormorant Garamond", serif;
+  color: #bc8a5f;
+    background: #d7b48a;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+h1, h2, h3, .headline, #logo {
+  font-family: "Marcellus", serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #3b2516;
+  border-bottom: 4px solid #a77a49;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  background: url("images/logo 2 (1).png") center/contain no-repeat;
+}
+
+/* ==========================================================
+   SIDE NAV
+========================================================== */
+.navsidepanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: #f3d5b5;
+  padding-top: 80px;
+  overflow-x: hidden;
+  transition: 0.35s ease;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  z-index: 1200;
+}
+
+.navsidepanel a {
+  display: block;
+  padding: 20px 30px;
+  font-size: 26px;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  color: #3D2412;
+  transition: 0.3s;
+}
+
+.navsidepanel a:hover {
+  background: #e9c6a3;
+  padding-left: 38px;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 32px;
+  color: #3D2412;
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+    background: rgba(59,37,22,0.6);
+  color: #f9f2e9;
+}
+
+.hero h1 {
+  font-size: 52px;
+  text-shadow: 2px 2px 4px #2a1a12;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 22px;
+  font-style: italic;
+}
+
+/* ==========================================================
+   BUTTON STYLES — CONSISTENT MAIN BUTTON
+========================================================== */
+.btn,
+.button,
+.menu_btn,
+.info_btn {
+  padding: 12px 28px;
+  background: #a9744f;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.btn:hover,
+.button:hover,
+.menu_btn:hover,
+.info_btn:hover {
+  background: #8a5e3f;
+  transform: translateY(-3px);
+}
+
+/* Secondary button */
+.btn2 {
+  padding: 12px 28px;
+  background: #3b2516;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn2:hover {
+  background: #f3d5b5;
+  color: #3b2516;
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
+}
+
+/* ==========================================================
+   SIGNUP / LOGIN SECTION
+========================================================== */
+.signup_login {
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/coffeebean3.jpg") center/cover no-repeat;
+  border-top: 5px solid #3D2412;
+  border-bottom: 3px solid #3D2412;
+}
+
+.signup_card {
+  max-width: 650px;
+  padding: 40px 30px;
+  background: rgba(255,245,230,0.75);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  color: #3b2516;
+}
+
+/* ==========================================================
+   MENU GRID (AUTO-FIT)
+========================================================== */
+#menu_background {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.headline {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #3b2516;
+  font-family: "Playfair Display", serif;
+}
+
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
+  padding: 0 12px;
+}
+
+.menu_item {
+  background: rgba(255,245,230,0.7);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: 0.35s ease;
+}
+
+.menu_item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+.menu_item img {
+  width: 100%;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.menu_item:hover img { transform: scale(1.04); }
+
+.menu_item h3 {
+  font-size: 22px;
+  margin: 10px 14px 5px;
+  color: #3b2516;
+}
+
+.menu_item p {
+  font-size: 15px;
+  margin: 0 14px 16px;
+  color: #5b4a3a;
+}
+
+/* ==========================================================
+   INFO SECTION — FINAL VERSION
+========================================================== */
+.info {
+  padding: 60px 20px;
+  background: url("images/info-wood-bg.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(245,227,196,0.75);
+  z-index: 1;
+}
+
+.info_card {
+  position: relative;
+  z-index: 2;
+  padding: 40px 30px;
+  max-width: 700px;
+  background: rgba(255,250,240,0.85);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  border: 2px solid #d9b68c;
+  color: #3b2516;
+  line-height: 1.6;
+  font-family: "Playfair Display", serif;
+  text-align: left;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+footer {
+  background: #3b2516;
+  color: #fff5e6c7;
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid #a77a49;
+}
+
+/* ==========================================================
+   CONTACT PAGE — MATCH HOMEPAGE + SIGNUP THEME
+========================================================== */
+.contact {
+  padding: 60px 20px;
+  color:#3b2516;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.contact h1 {
+  font-size: 42px;
+  font-family: "Marcellus", serif;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #f9f2e9;
+  text-shadow: 2px 2px 4px #2a1a12;
+}
+
+.contact p {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #f3e9dc;
+}
+
+/* CONTACT BOX WRAPPER */
+.contact-box-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* CONTACT BOX */
+.contact-box {
+  background: rgba(255,245,230,0.75);
+  border-radius: 14px;
+  padding: 30px;
+  max-width: 430px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  animation: fadeIn 1s ease-in-out;
+  transition: 0.35s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+.contact-box h2,
+.contact-box h3 {
+  font-family: "Playfair Display", serif;
+  color: #3b2516;
+  text-align: center;
+}
+
+.contact-box p,
+.contact-box span {
+  color: #5b4a3a;
+  font-size: 16px;
+}
+
+/* CONTACT BUTTON — SAME AS SIGNUP BUTTON */
+.contact-box button {
+  padding: 12px 28px;
+  background: #a9744f;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.35);
+}
+
+.contact-box button:hover {
+  background: #8a5e3f;
+  transform: translateY(-3px);
+}
+
+/* CONTACT FORM */
+.form-wrapper {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.form-wrapper h2 {
+  font-family: "Marcellus", serif;
+  color: #f9f2e9;
+  text-shadow: 2px 2px 4px #2a1a12;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  max-width: 550px;
+  margin: 0 auto 18px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d4b89e;
+  background: #fff9f2;
+}
+
+form button {
+  padding: 12px 28px;
+  background: #a9744f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.35);
+}
+
+form button:hover {
+  background: #8a5e3f;
+  transform: translateY(-3px);
+}
+
+
+
+/* NAV PANEL – FIXED */
+.navsidepanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 0;                 /* IMPORTANT */
+    height: 100vh;
+
+    background-color: #3D2412;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    transition: width 0.4s ease;
+    z-index: 9999;
+    padding-top: 80px;
+}
+
+.navsidepanel .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    color: #f7f3ef;
+    cursor: pointer;
+}
+

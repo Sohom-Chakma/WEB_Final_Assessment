@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sign up for exclusive updates, offers and events from our café.">
+    <title>Sign Up | Café</title>
+    <link rel="stylesheet" href="signup.css">
+  </head>
+    <body>
+        <a class="sr-only" href="#main">Skip to content</a>
+
+        <header aria-hidden="false">
+         
+        </header>
+
+        
+        <section class="hero" aria-labelledby="hero-title">
+            <picture class="hero-media" aria-hidden="true">
+               <img src="images/logo 2 (1).png" sizes="(max-width:350px) 50vw, 1000px">
+                <img src="images/logo 2 (1).png" alt="" class="logo" decoding="async" loading="lazy">
+            </picture>
+
+            <div class="hero-content">
+                <h1 id="hero-title">Discover Your World of Flavours</h1>
+                <p>Sign up now to enjoy exclusive updates, special treats, and more!</p>
+            </div>
+        </section>
+
+        
+        <main id="main">
+            <div class="form-container">
+                <form id="signupForm" action="#" method="post" aria-labelledby="signup-title">
+                    <h2 id="signup-title">Sign Up Now!</h2>
+                    <p class="lead">Join us to discover your world of flavours.</p>
+
+                    
+                    <fieldset class="name-group" aria-describedby="name-help">
+                        <legend class="sr-only">Full name</legend>
+                        <span id="name-help" class="sr-only">Provide your legal or preferred name.</span>
+
+                        <label for="firstName" class="sr-only">First name</label>
+                        <input id="firstName" name="given-name" type="text" placeholder="First Name" autocomplete="given-name" required>
+
+                        <label for="middleName" class="sr-only">Middle middleName</label>
+                        <input id="middleName" name="additional-name" type="text" placeholder="Middle Name" autocomplete="additional-name">
+
+                        <label for="lastName" class="sr-only">Last name</label>
+                        <input id="lastName" name="family-name" type="text" placeholder="Last Name" autocomplete="family-name" required>
+                    </fieldset>
+
+                    
+                    <div>
+                        <label for="email" class="sr-only">Email address</label>
+                        <input id="email" name="email" type="email" placeholder="Email" autocomplete="email" required>
+                    </div>
+
+                    
+                    <div class="phone-group">
+                        <label for="areaCode" class="sr-only">Country code</label>
+                        <select id="areaCode" name="areaCode" aria-label="Country code">
+                            <option value="+60">+60</option>
+                            <option value="+65">+65</option>
+                            <option value="+66">+66</option>
+                        </select>
+
+                        <label for="phoneNumber" class="sr-only">Phone number</label>
+                        <input id="phoneNumber" name="tel" type="tel" pattern="[0-9+\-()\s]{6,20}" placeholder="Phone Number" autocomplete="tel" required>
+                    </div>
+
+                    <fieldset class="address-group">
+                        <legend class="sr-only">Address</legend>
+
+                        <label for="addr1" class="sr-only">Street address line 1</label>
+                        <input id="addr1" name="address-line1" type="text" placeholder="Street Address Line 1" autocomplete="address-line1" required>
+
+                        <label for="addr2" class="sr-only">Street address line 2</label>
+                        <input id="addr2" name="address-line2" type="text" placeholder="Street Address Line 2" autocomplete="address-line2">
+
+                        <label for="city" class="sr-only">City</label>
+                        <input id="city" name="address-level2" type="text" placeholder="City" autocomplete="address-level2" required>
+
+                        <label for="state" class="sr-only">State or province</label>
+                        <input id="state" name="address-level1" type="text" placeholder="State / Province" autocomplete="address-level1" required>
+
+                        <label for="postal" class="sr-only">Postal code</label>
+                        <input id="postal" name="postal-code" type="text" placeholder="Zip / Postal Code" autocomplete="postal-code" required>
+                    </fieldset>
+
+                
+                    <div class="dob-group">
+                        <label class="sr-only" for="birthDay">Date of birth</label>
+                        <select id="birthDay" name="birthDay" aria-label="Birth day" required></select>
+                        <select id="birthMonth" name="birthMonth" aria-label="Birth month" required>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="birthYear" name="birthYear" aria-label="Birth year" required></select>
+                    </div>
+
+
+                    <fieldset class="heard-group">
+                      <legend>Where did you hear about us?</legend>
+                      <label for="heard_search"><input id="heard_search" name="heardAboutUs[]" type="checkbox" value="searchengine"> Search Engine</label>
+                      <label for="heard_friend"><input id="heard_friend" name="heardAboutUs[]" type="checkbox" value="friend"> Friend</label>
+                      <label for="heard_article"><input id="heard_article" name="heardAboutUs[]" type="checkbox" value="article/blog"> Article/Blog</label>
+                      <label for="heard_institution"><input id="heard_institution" name="heardAboutUs[]" type="checkbox" value="institution"> Institution</label>
+                      <label for="heard_other"><input id="heard_other" name="heardAboutUs[]" type="checkbox" value="other"> Other</label>
+                    </fieldset>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </main>
+
+        <script>
+            // Populate day (1-31) and year (e.g., 1900..currentYear)
+            (function populateDOB(){
+                var day = document.getElementById('birthDay');
+                var year = document.getElementById('birthYear');
+                if(!day || !year) return;
+                for(var d=1; d<=31; d++){
+                    var opt = document.createElement('option');
+                    opt.value = d; opt.textContent = d; day.appendChild(opt);
+                }
+                var currentYear = new Date().getFullYear();
+                for(var y=currentYear; y>=1900; y--){
+                    var opt = document.createElement('option');
+                    opt.value = y; opt.textContent = y; year.appendChild(opt);
+                }
+            })();
+        </script>
+    </body>
+</html>

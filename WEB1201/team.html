@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team | Bean & Co.</title>
+        <link rel="stylesheet" href="teamm.css">
+        <script>
+            function filterItems(category) {
+                const items = document.querySelectorAll('.item');
+                items.forEach(item => {
+                    if (category === 'all') {
+                        item.style.display = 'block';
+                    } else if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            function navOpen(){
+                document.getElementById("sidepanel").style.width="250px";
+            }
+            function navClose(){
+                document.getElementById("sidepanel").style.width="0";
+            }
+
+            filterItems('all');
+        </script>
+    </head>
+
+    <body>
+
+    <main>
+
+        <header>
+            <div><img src="images/logo 2 (1).png" width="100px" height="100px" alt="Bean & Co Logo"></div>
+            <div id="sidepanel" class="navsidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="navClose()">&times;</a>
+                <a href="home.html" id="menu">Home</a>
+                <a href="about.html" id="menu">About Us</a>
+                <a href="menu.html" id="menu">Services</a>
+                <a href="team.html" id="menu">Team</a>
+                <a href="contact.html" id="menu">Contact Us</a>
+            </div>
+            <button class="openbtn" onclick="navOpen()"><img src="images/menu-svgrepo-com.svg" width="40px" height="40px"></button>
+        </header>
+
+        <section class="team-section">
+            <div class="team-header">
+                <h2>Our Team</h2>
+                <p>Meet the team that makes Bean & Co. possible.</p>
+            </div>
+
+            <!-- Member 1 -->
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="images/team-image.png" alt="Team Member 1">
+                    </div>
+
+                    <div class="team-info">
+                        <h3>Sohom Chakma</h3>
+                        <p>Software Engineer</p>
+                        <p>Login, Sign Up & Teams</p>
+                        <a href="#/" target="_blank" class = "socials-link">Profile</a>                               <!-- Update link to your profile -->
+                        <a href="https://github.com/chakm-97" target="_blank" class="profile-link">GitHub</a>
+                    </div>
+                </div>
+
+
+            <!-- Member 2 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="images/WhatsApp Image 2025-12-20 at 7.53.16 PM.jpeg" alt="Team Member 1">
+                    </div>
+
+                    <div class="team-info">
+                        <h3>Yasini Ramasvaran</h3>
+                        <p>CSS styling, Javascript polishing & Report writing</p>
+                        <p>responsibilities</p>
+                        <a href="CV/Yasini.html" target="_blank" class = "socials-link">Profile</a>                               <!-- Update link to your profile -->
+                        <a href="https://github.com/chakm-97" target="_blank" class="profile-link">GitHub</a>
+                    </div>
+                </div>
+
+
+            <!-- Member 3 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="../images/team-image.png" alt="Team Member 1">
+                    </div>
+
+                    <div class="team-info">
+                        <h3>name</h3>
+                        <p>role</p>
+                        <p>responsibilities</p>
+                        <a href="#/" target="_blank" class = "socials-link">Profile</a>                               <!-- Update link to your profile -->
+                        <a href="https://github.com/chakm-97" target="_blank" class="profile-link">GitHub</a>
+                    </div>
+                </div>
+
+
+            <!-- Member 4 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="../images/team-image.png" alt="Team Member 1">
+                    </div>
+
+                    <div class="team-info">
+                        <h3>name</h3>
+                        <p>role</p>
+                        <p>responsibilities</p>
+                        <a href="#/" target="_blank" class = "socials-link">Profile</a>                               <!-- Update link to your profile -->
+                        <a href="https://github.com/chakm-97" target="_blank" class="profile-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
+        </footer>
+
+        </main>
+
+    </body>
+</html>
