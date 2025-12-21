@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="portfolio.css" type="text/css">
     <script>
+        // Reset to top when refresh
         if (window.location.hash) {
         history.replaceState(null, null, ' ');
         window.scrollTo(0, 0);
@@ -34,22 +35,35 @@
         </ul>
     </nav>
     <section class="top-section">
-        <div class="top-section-background">
-
-        </div>
+        <div class="top-section-background"></div>
         <section class="top-section-text">
             <h1>Hello, I'm Max!</h1>
             <h3>This is my portfolio</h3>
-            <button class="button-contact">Contact Me</button>
+            <button id="button-contact-id" class="button-contact">Contact Me</button>
         </section>
     </section>
     <section id="skills">
         <div class="skills-grid-container">
-            <div class="skill">HTML and CSS Web Design </div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Version Control (Github)</div>
-            <div class="skill">Problem Solving & Debugging</div>
-            <div class="skill">Teamwork</div>
+            <div class="skill">
+                <h3>HTML & CSS Web Design</h3>
+                <p>Building clean, semantic structures and styling them with responsive layouts for modern, user-friendly websites.</p>
+            </div>
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Adding interactivity and dynamic functionality through DOM manipulation, events, and client-side logic.</p>
+            </div>
+            <div class="skill">
+                <h3>Version Control (GitHub)</h3>
+                <p>Managing code collaboratively with Git, ensuring smooth teamwork and organized project history.</p>
+            </div>
+            <div class="skill">
+                <h3>Problem Solving & Debugging</h3>
+                <p>Identifying issues quickly and applying logical solutions to improve performance and usability.</p>
+            </div>
+            <div class="skill">
+                <h3>Teamwork</h3>
+                <p>Working effectively with peers, contributing ideas, and supporting group success in collaborative projects.</p>
+            </div>
         </div>
     </section>
     <section id="about-me">
@@ -104,6 +118,39 @@
             </div>
         </div>
     </section>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Me</h2>
+            <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById("contactModal");
+        const btn = document.getElementById("button-contact-id");
+        const span = document.querySelector(".close");
+        // Open modal when button clicked
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close modal when X clicked
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>   
     <footer>
         <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
     </footer>
