@@ -201,34 +201,84 @@ footer {
     font-size: 24px;
   }
   .navbar {
+    flex-direction: column;
     gap: 15px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
   }
 
   .navbar button{
     font-size: 16px;
   }
 
- h1 {
-  text-align: center;
-  font-size: 26px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  color: #3D2412;
-  margin: 40px 0 10px;
-  position: relative;
-  opacity: 0.85;
+  .menu-title {
+    text-align: center;
+    margin: 35px 0 20px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #3D2412;
+    margin: 40px 0 10px;
+    position: relative;
+    opacity: 0.85;
+  }
+
+  h1::after {
+    content: "none";
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #a77a49;
+    margin: 12px auto 0;
+    opacity: 0.6;
+  }
 }
 
-h1::after {
-  content: "none";
-  display: block;
-  width: 120px;
-  height: 1px;
-  background: #a77a49;
-  margin: 12px auto 0;
-  opacity: 0.6;
+@media (max-width: 400px) {
+  h1 {
+    font-size: 20px;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar button{
+    font-size: 14px;
+  }
+
+  .menu-title {
+    text-align: center;
+    margin: 30px 0 35px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #3D2412;
+    margin: 40px 0 10px;
+    position: relative;
+    opacity: 0.85;
+  }
+
+  h1::after {
+    content: "none";
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #a77a49;
+    margin: 12px auto 0;
+    opacity: 0.6;
+  }
 }
-}
+
 .navbar {
   background: transparent;
   display: flex;
