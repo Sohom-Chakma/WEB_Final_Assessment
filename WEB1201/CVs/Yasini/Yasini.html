@@ -5,20 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yasini Ramasvaran | CV</title>
     <link rel="stylesheet" href="Yasini.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="cv-nav">
+        <a href="team.html" class="nav-link">← Back to Team Page</a>
+    </nav>
+
     <div class="cv-container">
         <!-- HEADER (Top Section) -->
         <header class="cv-header">
             <div class="header-text">
-                <h1>Yasini Ramasvaran</h1>
+                <h1 class="typing-effect">Yasini Ramasvaran</h1>
                 <p class="role">BSc (Hons) Information Technology<br>(Computer Networking & Security)</p>
             </div>
+            <!-- INLINE NAVIGATION -->
+            <nav class="header-nav">
+                <a href="#profile" class="nav-item">Profile</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#education" class="nav-item">Education</a>
+                <a href="#project" class="nav-item">Projects</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </nav>
         </header>
 
         <!-- MAIN CONTENT (Single Column) -->
         <main class="cv-main">
-            <section class="profile-section">
+            <section id="profile" class="profile-section">
                 <h2>Profile</h2>
                 <p>
                     I am an undergraduate student pursuing a Bachelor of Science (Honours) in
@@ -29,16 +43,32 @@
                 </p>
             </section>
 
-            <section class="skills-section">
+            <section id="skills" class="skills-section">
                 <h2>Skills</h2>
-                <ul class="skill-list">
-                    <li><span class="icon">⚡</span> HTML & CSS</li>
-                    <li><span class="icon">🎨</span> CSS Styling & Layout</li>
-                    <li><span class="icon">🟨</span> JavaScript</li>
-                    <li><span class="icon">🌐</span> Web Design</li>
-                    <li><span class="icon">📝</span> Report Writing</li>
-                    <li><span class="icon">🌐</span> Web Developing</li>
-                </ul>
+                <div class="skill-item">
+                    <span>HTML & CSS</span>
+                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>CSS Styling & Layout</span>
+                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Web Design</span>
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Report Writing</span>
+                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Web Developing</span>
+                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                </div>
                 <h3>Soft Skills</h3>
                 <ul class="skill-list">
                     <li><span class="icon">👩‍🏫</span> Teaching</li>
@@ -49,10 +79,11 @@
                 </ul>
             </section>
 
-            <section class="education-section">
+            <section id="education" class="education-section">
                 <h2>Education</h2>
                 <div class="timeline">
                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
                         <h3>BSc (Hons) Information Technology</h3>
                         <p>Computer Networking and Security</p>
                         <span>Sunway University | Expected 2028</span>
@@ -60,7 +91,7 @@
                 </div>
             </section>
 
-            <section class="highlight">
+            <section id="project" class="highlight">
                 <h2>Project Contribution</h2>
                 <ul>
                     <li>Designed the overall website layout using HTML and CSS</li>
@@ -71,10 +102,11 @@
                 </ul>
             </section>
 
-            <section class="contact-section">
+            <section id="contact" class="contact-section">
                 <h2>Contact</h2>
                 <p><strong>Email:</strong> <a href="mailto:25039942@imail.sunway.edu.my" class="cv-link">25039942@imail.sunway.edu.my</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/Yash05-stack" target="_blank" class="cv-link">https://github.com/Yash05-stack</a></p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/Yash05-stack" target="_blank" class="cv-link">https://github.com/Yash05-stack</a></p>
+             <p><strong>Contact:</strong> <a href="010-9212913" target="_blank" class="cv-link">010-9212913</a></p>
             </section>
         </main>
     </div>
