@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CV Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css" type="text/css">
+    <script>
+        if (window.location.hash) {
+        history.replaceState(null, null, ' ');
+        window.scrollTo(0, 0);
+        }
+        if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+        }
+    </script>      
+</head>
+<body>
+    <header class="header-container">
+        <h1>CV Page-MAX WONG YONG MING</h1>
+        <a href=""><img src="image/back-arr.png" alt="Back arrow"> Back to homepage</a>
+    </header>
+    <nav class="navigation-bar">
+        <ul>
+            <li>
+                <a href="#about-me">About Me</a>
+            </li>
+            <li>
+                <a href="#contribution">Contribution</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="top-section">
+        <div class="top-section-background">
+
+        </div>
+        <section class="top-section-text">
+            <h1>Hello, I'm Max!</h1>
+            <h3>This is my portfolio</h3>
+            <button class="button-contact">Contact Me</button>
+        </section>
+    </section>
+    <section id="skills">
+        <div class="skills-grid-container">
+            <div class="skill">HTML and CSS Web Design </div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Version Control (Github)</div>
+            <div class="skill">Problem Solving & Debugging</div>
+            <div class="skill">Teamwork</div>
+        </div>
+    </section>
+    <section id="about-me">
+        <div class="about-me-container">
+            <img loading="lazy" src="image/about-me-img.png" alt="Image of about me">
+            <div class="about-me-text">
+                <h1>A few words about me</h1>
+                <p>I am a student in Sunway University. I am a passionate web developer with proficiency in HTML, CSS and JavaScript. I enjoy crafting responsive, user-friendly interfaces and bringing creative ideas to life through clean code and thoughtful design. I am always eager to learn new techniques that enhance both functionality and aesthetics.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contribution">
+        <div class="contribution-container">
+            <h2>My Contribution</h2>
+            <p>In our group web development assignment, I played a key role in designing and implementing the following pages:</p>
+            
+            <div class="contribution-grid">
+              <div class="contribution-item">
+                <h3>Menu Page</h3>
+                <p>I developed the interactive menu page, implementing a responsive grid layout, category filters, and hover effects to enhance usability and presentation.</p>
+              </div>
+              
+              <div class="contribution-item">
+                <h3>Contact Page</h3>
+                <p>I created the contact page with a form, including client-side validation for empty fields and email format, ensuring clear error messages and smooth user interaction.</p>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section id="contact" class="contact-box">
+        <div class="contact-box-container">
+            <header style="border-bottom: solid 1px;">
+                <h1>Contact Info</h1>
+                <p>You can reach me in any convenient way to discuss the details.</p>
+            </header>
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <img src="image/email-logo.png">
+                    <span>EMAIL ME</span>
+                    <a href="#" onclick="event.preventDefault();">maxwongyongming@gmail.com</a>
+                </div>
+                <div class="contact-grid">
+                    <img src="image/phone-logo.png">
+                    <span>CALL ME</span>
+                    <a href="#" onclick="event.preventDefault();">+60 17 390 2696</a>
+                </div>
+                <div class="contact-grid">
+                    <img src="image/linkedin-logo.png">
+                    <span>FIND ME</span>
+                    <span>www.linkedin.com/maxwong</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
+    </footer>
+</body>
+</html>
