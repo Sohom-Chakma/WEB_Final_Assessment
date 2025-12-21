@@ -51,6 +51,7 @@ header {
 
 /*Side Navigation Panel */
 .navsidepanel {
+    display: none;
     height: 100%;
     width: 0;
     position: fixed;
