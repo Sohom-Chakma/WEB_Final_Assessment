@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Sohom Chakma</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../../team.html" class="back-link">← Back to Team</a>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+<header id="home" class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Hello, I'm <span class="highlight-text">Sohom Chakma</span></h1>
+      <p class="role">BSc (Hons) Computer Science Student @Sunway University</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="text-content">
+          <p>
+            I am a passionate undergraduate student with a strong interest in web development and design.
+            I enjoy watching football and spend my time working on analytical projects.
+          </p>
+          <p>
+            My focus is on writing clean code and learning new technologies to improve functionality and aesthetics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>HTML & CSS</h3>
+          <p>Flexbox, Grid, and Responsive Design, Forms and Validation.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Data Analytics</h3>
+          <p>Database Querying, Visualization, ML, Statistical Analysis.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Tools</h3>
+          <p>Git, GitHub, Webstorm, PyCharm and Google Colab.</p>
+        </div>
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <p>Teamwork, Communication, and Problem Solving.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Project Contributions</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <h3>Web Development Assignment</h3>
+          <ul>
+            <li>Designed the overall layout using HTML5 and CSS3.</li>
+            <li>Implemented responsive navigation for mobile compatibility.</li>
+            <li>Created form validation scripts using JavaScript.</li>
+            <li>Collaborated with team members to ensure design consistency.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt-bg">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-wrapper">
+        <p>Feel free to reach out for collaborations or questions.</p>
+        <div class="contact-links">
+          <a href="mailto:sohomchakma@gmail.com" class="contact-btn">📧 Email Me</a>
+          <a href="tel: +600123456789" class="contact-btn">📞 Call Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Sohom Chakma. All Rights Reserved.</p>
+</footer>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+</script>
+</body>
+</html>
