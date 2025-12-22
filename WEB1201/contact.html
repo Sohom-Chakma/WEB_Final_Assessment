@@ -47,22 +47,22 @@
                     <img src="images/message-icon.svg" alt="Message Icon">
                     <h2>Message Our Team</h2>
                     <span>Send us a message about anything. We are interested about your feedback.</span>
-                    <button>Message Us</button>
+                    <button id="message-btn">Message Us</button>
                 </div>
             </div>
             <div class="form-wrapper">
                 <h2>Send us a message</h2>
-                <form>
+                <form id="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name">
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email">
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Your Message"></textarea>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit">Send Message</button>
+                    <button id="submit-btn" type="submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -70,5 +70,19 @@
     <footer>
         <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
     </footer>
+    <script>
+        const sendMsg = document.getElementById("message-btn");
+        const form = document.getElementById("contact-form");
+        sendMsg.onclick = function (event){
+            event.preventDefault(); // stops default form submission
+            document.querySelector(".form-wrapper").scrollIntoView({ behavior: "smooth" });
+        }
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Form submitted successfully!");
+            window.location.reload();
+        });
+    </script>
 </body>
 </html>
