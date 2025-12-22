@@ -238,6 +238,17 @@ button:focus {
     box-shadow: 0 0 0 3px rgba(163,86,46,0.14);
 }
 
+/* LINKS */
+a {
+    color: #a9744f;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #3b2516;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-12px); }
@@ -305,4 +316,54 @@ button:focus {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+/*SIDENAVBAR*/
+.navsidepanel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1200;
+    top: 0;
+    right: 0;
+    background: #f3d5b5;
+    padding-top: 80px;
+    transition: 0.35s ease;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    overflow-x: hidden;
+
+}
+
+.navsidepanel a {
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #3D2412;
+    font-weight: 500;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.navsidepanel a:hover {
+    background: #e9c6a3;
+    padding-left: 38px;
+}
+
+.openbtn {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.openbtn img {
+    filter: brightness(0) invert(1);
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 38px;
 }
