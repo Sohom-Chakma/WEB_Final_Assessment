@@ -7,6 +7,154 @@
     <title>Sign Up | Café</title>
     <link rel="stylesheet" href="signup.css">
     <link rel="icon" type="image/x-icon" href="images/logo 2 (1).png">
+
+    <!-- form validation for all rows-->
+      <script>
+          function validateForm() {
+              // --- 1. Validate Names ---
+              var fName = document.getElementById("firstName");
+              var mName = document.getElementById("middleName"); // Optional field
+              var lName = document.getElementById("lastName");
+
+              // Constraints
+              var alphaOnly = /^[A-Za-z]+$/;            // A-Z only, no spaces
+              var alphaSpace = /^[A-Za-z\s]+$/;         // A-Z and spaces allowed
+              var nameLimit = 50;                       // Max length for First/Last
+              var middleLimit = 100;                    // Max length for Middle (longer)
+
+              // First Name Validation
+              if (fName.value.trim() === "") {
+                  alert("First Name is required.");
+                  fName.focus();
+                  return false;
+              }
+              if (!alphaOnly.test(fName.value)) {
+                  alert("First Name must contain alphabets only (no spaces or numbers).");
+                  fName.focus();
+                  return false;
+              }
+              if (fName.value.length > nameLimit) {
+                  alert("First Name cannot be longer than " + nameLimit + " characters.");
+                  fName.focus();
+                  return false;
+              }
+
+              // Middle Name Validation (Optional, but strict if entered)
+              if (mName.value.trim() !== "") {
+                  if (!alphaSpace.test(mName.value)) {
+                      alert("Middle Name must contain alphabets only (spaces are allowed).");
+                      mName.focus();
+                      return false;
+                  }
+                  if (mName.value.length > middleLimit) {
+                      alert("Middle Name cannot be longer than " + middleLimit + " characters.");
+                      mName.focus();
+                      return false;
+                  }
+              }
+
+              // Last Name Validation
+              if (lName.value.trim() === "") {
+                  alert("Last Name is required.");
+                  lName.focus();
+                  return false;
+              }
+              if (!alphaOnly.test(lName.value)) {
+                  alert("Last Name must contain alphabets only (no spaces or numbers).");
+                  lName.focus();
+                  return false;
+              }
+              if (lName.value.length > nameLimit) {
+                  alert("Last Name cannot be longer than " + nameLimit + " characters.");
+                  lName.focus();
+                  return false;
+              }
+
+              // --- 2. Validate Email ---
+              var email = document.getElementById("email");
+              if (email.value.trim() === "") {
+                  alert("Email address is required.");
+                  email.focus();
+                  return false;
+              }
+              // Uses the HTML5 type="email" validation logic
+              if (!email.checkValidity()) {
+                  alert("Please enter a valid email address (e.g., user@example.com).");
+                  email.focus();
+                  return false;
+              }
+
+              // --- 3. Validate Phone Number ---
+              var phone = document.getElementById("phoneNumber");
+              // Strict Regex: Exactly 10 digits, no letters, no special chars
+              var phonePattern = /^\d{10}$/;
+
+              if (phone.value.trim() === "") {
+                  alert("Phone number is required.");
+                  phone.focus();
+                  return false;
+              }
+              if (!phonePattern.test(phone.value)) {
+                  alert("Phone number must be exactly 10 digits (numbers only).");
+                  phone.focus();
+                  return false;
+              }
+
+              // --- 4. Validate Address (Basic Checks) ---
+              var addr1 = document.getElementById("addr1");
+              var city = document.getElementById("city");
+              var state = document.getElementById("state");
+
+              if (addr1.value.trim() === "") { alert("Street Address is required."); addr1.focus(); return false; }
+              if (city.value.trim() === "") { alert("City is required."); city.focus(); return false; }
+              if (state.value.trim() === "") { alert("State/Province is required."); state.focus(); return false; }
+
+              // --- 5. Validate Postal Code ---
+              var postal = document.getElementById("postal");
+              // Strict Regex: Exactly 5 digits
+              var postalPattern = /^\d{5}$/;
+
+              if (postal.value.trim() === "") {
+                  alert("Postal Code is required.");
+                  postal.focus();
+                  return false;
+              }
+              if (!postalPattern.test(postal.value)) {
+                  alert("Postal Code must be exactly 5 numbers.");
+                  postal.focus();
+                  return false;
+              }
+
+              // --- 6. Validate Date of Birth ---
+              var day = document.getElementById("birthDay").value;
+              var month = document.getElementById("birthMonth").value;
+              var year = document.getElementById("birthYear").value;
+
+              if (day === "" || month === "" || year === "") {
+                  alert("Please select your full Date of Birth.");
+                  return false;
+              }
+              var dateObj = new Date(year, month - 1, day);
+              if (dateObj.getFullYear() != year || dateObj.getMonth() + 1 != month || dateObj.getDate() != day) {
+                  alert("The Date of Birth you selected is invalid.");
+                  return false;
+              }
+
+              // --- 7. Validate Heard About Us ---
+              var checkboxes = document.getElementsByName("heardAboutUs[]");
+              var isChecked = false;
+              for (var i = 0; i < checkboxes.length; i++) {
+                  if (checkboxes[i].checked) { isChecked = true; break; }
+              }
+              if (!isChecked) {
+                  alert("Please select at least one option for 'Where did you hear about us?'.");
+                  return false;
+              }
+
+              // All Good
+              return true;
+          }
+      </script>
   </head>
     <body>
         <a class="sr-only" href="#main">Skip to content</a>
@@ -31,7 +179,7 @@
         
         <main id="main">
             <div class="form-container">
-                <form id="signupForm" action="#" method="post" aria-labelledby="signup-title">
+                <form id="signupForm" action="#" method="post" aria-labelledby="signup-title" onsubmit="return validateForm()">
                     <h2 id="signup-title">Sign Up Now!</h2>
                     <p class="lead">Join us to discover your world of flavours.</p>
 
@@ -68,6 +216,9 @@
                         <label for="phoneNumber" class="sr-only">Phone number</label>
                         <input id="phoneNumber" name="tel" type="tel" pattern="[0-9+\-()\s]{6,20}" placeholder="Phone Number" autocomplete="tel" required>
                     </div>
+
+
+
 
                     <fieldset class="address-group">
                         <legend class="sr-only">Address</legend>
