@@ -168,11 +168,6 @@ body::before {
     animation: rotate 30s infinite linear;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 .typing-effect {
     font-size: 3rem;
     font-weight: 700;
