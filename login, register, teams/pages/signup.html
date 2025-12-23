@@ -32,7 +32,6 @@
 
 </head>
 <body>
-<a class="sr-only" href="#main">Skip to content</a>
 
 <header aria-hidden="false">
 
@@ -60,7 +59,7 @@
 
 
             <fieldset class="name-group" aria-describedby="name-help">
-                <legend class="sr-only">Full name</legend>
+                <legend>Full name</legend>
                 <input
                         id="firstName"
                         name="given-name"
@@ -89,47 +88,46 @@
                         required>
             </fieldset>
 
+            <fieldset class="contact-group">
+                <legend>Contact Information</legend>
+                <div class="email-group">
+                    <input
+                            id="email"
+                            name="email" type="email"
+                            placeholder="Email"
+                            autocomplete="email"
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            title="Requires a valid email format."
+                            required>
+                </div>
 
-            <div>
-                <label for="email" class="sr-only">Email address</label>
-                <input
-                        id="email"
-                        name="email" type="email"
-                        placeholder="Email"
-                        autocomplete="email"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        title="Requires a valid email format."
-                        required>
-            </div>
+
+                <div class="phone-group">
+                    <select id="areaCode" name="areaCode" aria-label="Country code">
+                        <option value="+60">+60</option>
+                        <option value="+65">+65</option>
+                        <option value="+66">+66</option>
+                    </select>
+
+                    <input
+                            id="phoneNumber"
+                            name="tel"
+                            type="tel"
+                            placeholder="Phone Number"
+                            autocomplete="tel"
+                            pattern="[0-9]{10}"
+                            title="10 digits"
+                            required>
+                </div>
+            </fieldset>
 
 
-            <div class="phone-group">
-                <label for="areaCode" class="sr-only">Country code</label>
-                <select id="areaCode" name="areaCode" aria-label="Country code">
-                    <option value="+60">+60</option>
-                    <option value="+65">+65</option>
-                    <option value="+66">+66</option>
-                </select>
-
-                <label for="phoneNumber" class="sr-only">Phone number</label>
-                <input
-                        id="phoneNumber"
-                        name="tel"
-                        type="tel"
-                        placeholder="Phone Number"
-                        autocomplete="tel"
-                        pattern="[0-9]{10}"
-                        title="10 digits"
-                        required>
-            </div>
 
 
 
 
             <fieldset class="address-group">
-                <legend class="sr-only">Address</legend>
-
-                <label for="addr1" class="sr-only">Street address line 1</label>
+                <legend>Address</legend>
                 <input
                         id="addr1"
                         name="address-line1"
@@ -140,7 +138,6 @@
                         title="Enter a valid address."
                         required>
 
-                <label for="addr2" class="sr-only">Street address line 2</label>
                 <input
                         id="addr2"
                         name="address-line2"
@@ -150,7 +147,6 @@
                         title="Enter a valid address."
                         autocomplete="address-line2">
 
-                <label for="city" class="sr-only">City</label>
                 <input
                         id="city"
                         name="address-level2"
@@ -161,7 +157,6 @@
                         title="Letters and spaces only. 100 character limit."
                         required>
 
-                <label for="state" class="sr-only">State or province</label>
                 <select
                         id="state"
                         name="address-level1"
@@ -186,7 +181,6 @@
                     <option value="Terengganu">Terengganu</option>
                 </select>
 
-                <label for="postal" class="sr-only">Postal code</label>
                 <input
                         id="postal"
                         name="postal-code"
@@ -198,27 +192,34 @@
                         required>
             </fieldset>
 
+            <fieldset class="dob-fieldset">
+                <legend>Date of birth</legend>
+                <div class="dob-group">
+                    <select id="birthDay" name="birthDay" aria-label="Birth day" required>
+                        <option value=""disabled selected hidden>Day</option>
+                    </select>
+                    <select id="birthMonth" name="birthMonth" aria-label="Birth month" required>
+                        <option value=""disabled selected hidden>Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select id="birthYear" name="birthYear" aria-label="Birth year" required>
+                        <option value=""disabled selected hidden>Year</option>
+                    </select>
+                </div>
+            </fieldset>
 
-            <div class="dob-group">
-                <label class="sr-only" for="birthDay">Date of birth</label>
-                <select id="birthDay" name="birthDay" aria-label="Birth day" required></select>
-                <select id="birthMonth" name="birthMonth" aria-label="Birth month" required>
-                    <option value=""disabled selected hidden>Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="11">October</option>
-                    <option value="12">November</option>
-                    <option value="13">December</option>
-                </select>
-                <select id="birthYear" name="birthYear" aria-label="Birth year" required></select>
-            </div>
+
 
 
             <fieldset class="heard-group">
@@ -233,7 +234,7 @@
 
             <!-- log into your account -->
             <div class="input-row">
-                <a href="login.html">Already have an account? Log in here.</a>
+                <a href="login.html">Login to your account here.</a>
             </div>
         </form>
         <div class="form-container">
@@ -246,34 +247,29 @@
 </main>
 
 <script>
-    // Populate day (1-31) and year (e.g., 1900..currentYear)
+    // Self-invoking function runs immediately
     (function populateDOB(){
         var day = document.getElementById('birthDay');
         var year = document.getElementById('birthYear');
+
+        // Safety check
         if(!day || !year) return;
-        /* Add Placeholder for Day, also */
-        var defaultDay = document.createElement('option');
-        defaultDay.value = "";
-        defaultDay.text = "Day";
-        defaultDay.disabled = true;
-        defaultDay.selected = true;
-        defaultDay.hidden = true;
-        day.appendChild(defaultDay);
+
+        // Populate Days (1-31)
         for(var d=1; d<=31; d++){
             var opt = document.createElement('option');
-            opt.value = d; opt.textContent = d; day.appendChild(opt);
+            opt.value = d;
+            opt.textContent = d;
+            day.appendChild(opt);
         }
+
+        // Populate Years (Current Year down to 1900)
         var currentYear = new Date().getFullYear();
-        var defaultYear = document.createElement('option');
-        defaultYear.value = "";
-        defaultYear.text = "Year";
-        defaultYear.disabled = true;
-        defaultYear.selected = true;
-        defaultYear.hidden = true;
-        year.appendChild(defaultYear);
         for(var y=currentYear; y>=1900; y--){
             var opt = document.createElement('option');
-            opt.value = y; opt.textContent = y; year.appendChild(opt);
+            opt.value = y;
+            opt.textContent = y;
+            year.appendChild(opt);
         }
     })();
 </script>

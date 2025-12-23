@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Bean & Co</title>
-    <link rel="stylesheet" href="../../WEB1201/login.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/x-icon" href="images/logo 2 (1).png">
+
 
     <script>
         function navOpen(){
@@ -22,16 +25,18 @@
 <!-- HEADER -->
 
 <header>
-    <div><img src="../../WEB1201/images/logo 2 (1).png" width="100" height="100" alt="Bean & Co Logo"></div>
+    <div><img src="images/logo 2 (1).png" width="100" height="100" alt="Bean & Co Logo"></div>
     <div id="sidepanel" class="navsidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="navClose()">&times;</a>
-        <a href="../../WEB1201/home.html" id="menu">Home</a>
-        <a href="../../WEB1201/about.html" id="menu">About Us</a>
-        <a href="../../WEB1201/menu.html" id="menu">Menu</a>
-        <a href="../../WEB1201/team.html" id="menu">Team</a>
-        <a href="../../WEB1201/contact.html" id="menu">Contact Us</a>
+        <a href="home.html" id="menu">Home</a>
+        <a href="about.html" id="menu">About Us</a>
+        <a href="menu.html" id="menu">Menu</a>
+        <a href="team.html" id="menu">Team</a>
+        <a href="contact.html" id="menu">Contact Us</a>
+        <a href="login.html" id="menu">Login</a>
+        <a href="signup.html" id="menu">Sign Up</a>
     </div>
-    <button class="openbtn" onclick="navOpen()"><img src="../../WEB1201/images/menu-svgrepo-com.svg" width="40px" height="40px"></button>
+    <button class="openbtn" onclick="navOpen()"><img src="images/menu-svgrepo-com.svg" width="40px" height="40px"></button>
 
 </header>
 
@@ -47,9 +52,6 @@
         <div class="form-container">
             <form action="home.html" onsubmit="return validateForm()">
                 <div class="input-row">
-                    <label id="email-header" for="email-input">
-                        Email
-                    </label>
                     <input
                             type="email"
                             name="email"
@@ -63,9 +65,6 @@
                 </div>
 
                 <div class="input-row">
-                    <label id="password-header" for="password-input">
-                        Password
-                    </label>
                     <input
                             type="password" name="password"
                             placeholder="Password"

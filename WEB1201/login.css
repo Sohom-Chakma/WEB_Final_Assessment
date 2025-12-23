@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Marcellus", serif;
 }
 
 /* BACKGROUND */
@@ -29,9 +28,10 @@ main {
 .login-section {
     background: rgba(255,245,230,0.88);
     border-radius: 14px;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
     padding: 35px 30px;
-    max-width: 500px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     animation: cardSlideUp 0.9s ease forwards;
     backdrop-filter: blur(4px);
@@ -120,6 +120,28 @@ a:hover {
     }
 }
 
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content, form {
+        animation: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .login-section {
+        width: 100%;
+    }
+
+    header footer {
+        padding: 10px 15px;
+    }
+}
+
 /*Header*/
 header {
     width: 100%;
@@ -195,3 +217,9 @@ footer {
     margin-top: 40px;
     font-size: 14px;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+

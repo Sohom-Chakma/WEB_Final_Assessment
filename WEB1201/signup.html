@@ -5,13 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Sign up for exclusive updates, offers and events from our café.">
     <title>Sign Up | Café</title>
-    <link rel="stylesheet" href="signup.css">
-    <link rel="icon" type="image/x-icon" href="images/logo 2 (1).png">
+    <link rel="stylesheet" href="../../WEB1201/signup.css">
+    <link rel="icon" type="image/x-icon" href="../../WEB1201/images/logo 2 (1).png">
+
+    <script>
+        function validateSignup(){
+            const form = document.getElementById('signupForm');
+            const message = document.getElementById('success-message');
+
+            // show success message
+            message.classList.add('show');
+
+            // Clear the input
+            form.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                message.classList.remove('show');
+            }, 5000);
+
+            // Prevents message from reloading
+            return false;
+        }
+    </script>
 
 
 </head>
 <body>
-<a class="sr-only" href="#main">Skip to content</a>
 
 <header aria-hidden="false">
 
@@ -20,8 +40,8 @@
 
 <section class="hero" aria-labelledby="hero-title">
     <picture class="hero-media" aria-hidden="true">
-        <img src="images/logo 2 (1).png" sizes="(max-width:350px) 50vw, 1000px">
-        <img src="images/logo 2 (1).png" alt="" class="logo" decoding="async" loading="lazy">
+        <img src="../../WEB1201/images/logo 2 (1).png" sizes="(max-width:350px) 50vw, 1000px">
+        <img src="../../WEB1201/images/logo 2 (1).png" alt="" class="logo" decoding="async" loading="lazy">
     </picture>
 
     <div class="hero-content">
@@ -33,86 +53,173 @@
 
 <main id="main">
     <div class="form-container">
-        <form id="signupForm" action="#" method="post" aria-labelledby="signup-title" onsubmit="return validateForm()">
+        <form id="signupForm" action="#" method="post" aria-labelledby="signup-title" onsubmit="return validateSignup()">
             <h2 id="signup-title">Sign Up Now!</h2>
             <p class="lead">Join us to discover your world of flavours.</p>
 
 
             <fieldset class="name-group" aria-describedby="name-help">
-                <legend class="sr-only">Full name</legend>
-                <span id="name-help" class="sr-only">Provide your legal or preferred name.</span>
+                <legend>Full name</legend>
+                <input
+                        id="firstName"
+                        name="given-name"
+                        type="text"
+                        placeholder="First Name"
+                        autocomplete="given-name"
+                        pattern="[a-zA-Z]{1,50}"
+                        title="Letters only. 50 character limit."
+                        required>
+                <input
+                        id="middleName"
+                        name="additional-name"
+                        type="text"
+                        placeholder="Middle Name"
+                        autocomplete="additional-name"
+                        pattern="[a-zA-Z\s]{0,100}"
+                        title="Letters and spaces only. 100 character limit.">
+                <input
+                        id="lastName"
+                        name="family-name"
+                        type="text"
+                        placeholder="Last Name"
+                        autocomplete="family-name"
+                        pattern="[a-zA-Z]{1,50}"
+                        title="Letters only. 50 character limit."
+                        required>
+            </fieldset>
 
-                <label for="firstName" class="sr-only">First name</label>
-                <input id="firstName" name="given-name" type="text" placeholder="First Name" autocomplete="given-name" required>
+            <fieldset class="contact-group">
+                <legend>Contact Information</legend>
+                <div class="email-group">
+                    <input
+                            id="email"
+                            name="email" type="email"
+                            placeholder="Email"
+                            autocomplete="email"
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            title="Requires a valid email format."
+                            required>
+                </div>
 
-                <label for="middleName" class="sr-only">Middle middleName</label>
-                <input id="middleName" name="additional-name" type="text" placeholder="Middle Name" autocomplete="additional-name">
 
-                <label for="lastName" class="sr-only">Last name</label>
-                <input id="lastName" name="family-name" type="text" placeholder="Last Name" autocomplete="family-name" required>
+                <div class="phone-group">
+                    <select id="areaCode" name="areaCode" aria-label="Country code">
+                        <option value="+60">+60</option>
+                        <option value="+65">+65</option>
+                        <option value="+66">+66</option>
+                    </select>
+
+                    <input
+                            id="phoneNumber"
+                            name="tel"
+                            type="tel"
+                            placeholder="Phone Number"
+                            autocomplete="tel"
+                            pattern="[0-9]{10}"
+                            title="10 digits"
+                            required>
+                </div>
             </fieldset>
 
 
-            <div>
-                <label for="email" class="sr-only">Email address</label>
-                <input id="email" name="email" type="email" placeholder="Email" autocomplete="email" required>
-            </div>
-
-
-            <div class="phone-group">
-                <label for="areaCode" class="sr-only">Country code</label>
-                <select id="areaCode" name="areaCode" aria-label="Country code">
-                    <option value="+60">+60</option>
-                    <option value="+65">+65</option>
-                    <option value="+66">+66</option>
-                </select>
-
-                <label for="phoneNumber" class="sr-only">Phone number</label>
-                <input id="phoneNumber" name="tel" type="tel" pattern="[0-9+\-()\s]{6,20}" placeholder="Phone Number" autocomplete="tel" required>
-            </div>
 
 
 
 
             <fieldset class="address-group">
-                <legend class="sr-only">Address</legend>
+                <legend>Address</legend>
+                <input
+                        id="addr1"
+                        name="address-line1"
+                        type="text"
+                        placeholder="Street Address Line 1"
+                        autocomplete="address-line1"
+                        pattern="[a-zA-Z0-9\s.,#-]+"
+                        title="Enter a valid address."
+                        required>
 
-                <label for="addr1" class="sr-only">Street address line 1</label>
-                <input id="addr1" name="address-line1" type="text" placeholder="Street Address Line 1" autocomplete="address-line1" required>
+                <input
+                        id="addr2"
+                        name="address-line2"
+                        type="text"
+                        placeholder="Street Address Line 2"
+                        pattern="[a-zA-Z0-9\s.,#-]+"
+                        title="Enter a valid address."
+                        autocomplete="address-line2">
 
-                <label for="addr2" class="sr-only">Street address line 2</label>
-                <input id="addr2" name="address-line2" type="text" placeholder="Street Address Line 2" autocomplete="address-line2">
+                <input
+                        id="city"
+                        name="address-level2"
+                        type="text"
+                        placeholder="City"
+                        autocomplete="address-level2"
+                        pattern="[a-zA-Z\s]{0,100}"
+                        title="Letters and spaces only. 100 character limit."
+                        required>
 
-                <label for="city" class="sr-only">City</label>
-                <input id="city" name="address-level2" type="text" placeholder="City" autocomplete="address-level2" required>
+                <select
+                        id="state"
+                        name="address-level1"
+                        type="text"
+                        placeholder="State / Province"
+                        autocomplete="address-level1"
+                        style="width: 60%"
+                        required>
+                    <option value=""disabled selected hidden>State</option>
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melaka">Melaka</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    <option value="Pahang">Pahang</option>
+                    <option value="Perak">Perak</option>
+                    <option value="Perlis">Perlis</option>
+                    <option value="Pulau Pinang">Pulau Pinang</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Terengganu">Terengganu</option>
+                </select>
 
-                <label for="state" class="sr-only">State or province</label>
-                <input id="state" name="address-level1" type="text" placeholder="State / Province" autocomplete="address-level1" required>
+                <input
+                        id="postal"
+                        name="postal-code"
+                        type="text"
+                        placeholder="Zip / Postal Code"
+                        autocomplete="postal-code"
+                        pattern="[0-9]{5}"
+                        title="Enter a 5 digit code"
+                        required>
+            </fieldset>
 
-                <label for="postal" class="sr-only">Postal code</label>
-                <input id="postal" name="postal-code" type="text" placeholder="Zip / Postal Code" autocomplete="postal-code" required>
+            <fieldset class="dob-fieldset">
+                <legend>Date of birth</legend>
+                <div class="dob-group">
+                    <select id="birthDay" name="birthDay" aria-label="Birth day" required>
+                        <option value=""disabled selected hidden>Day</option>
+                    </select>
+                    <select id="birthMonth" name="birthMonth" aria-label="Birth month" required>
+                        <option value=""disabled selected hidden>Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <select id="birthYear" name="birthYear" aria-label="Birth year" required>
+                        <option value=""disabled selected hidden>Year</option>
+                    </select>
+                </div>
             </fieldset>
 
 
-            <div class="dob-group">
-                <label class="sr-only" for="birthDay">Date of birth</label>
-                <select id="birthDay" name="birthDay" aria-label="Birth day" required></select>
-                <select id="birthMonth" name="birthMonth" aria-label="Birth month" required>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-                <select id="birthYear" name="birthYear" aria-label="Birth year" required></select>
-            </div>
 
 
             <fieldset class="heard-group">
@@ -127,26 +234,42 @@
 
             <!-- log into your account -->
             <div class="input-row">
-                <a href="login.html">Already have an account? Log in here.</a>
+                <a href="login.html">Login to your account here.</a>
             </div>
         </form>
+        <div class="form-container">
+        </div>
+
+        <div id="success-message" class="success-message">
+            Confirmation sent to your email address.
+        </div>
     </div>
 </main>
 
 <script>
-    // Populate day (1-31) and year (e.g., 1900..currentYear)
+    // Self-invoking function runs immediately
     (function populateDOB(){
         var day = document.getElementById('birthDay');
         var year = document.getElementById('birthYear');
+
+        // Safety check
         if(!day || !year) return;
+
+        // Populate Days (1-31)
         for(var d=1; d<=31; d++){
             var opt = document.createElement('option');
-            opt.value = d; opt.textContent = d; day.appendChild(opt);
+            opt.value = d;
+            opt.textContent = d;
+            day.appendChild(opt);
         }
+
+        // Populate Years (Current Year down to 1900)
         var currentYear = new Date().getFullYear();
         for(var y=currentYear; y>=1900; y--){
             var opt = document.createElement('option');
-            opt.value = y; opt.textContent = y; year.appendChild(opt);
+            opt.value = y;
+            opt.textContent = y;
+            year.appendChild(opt);
         }
     })();
 </script>
