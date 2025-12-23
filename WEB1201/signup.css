@@ -1,14 +1,3 @@
-:root {
-    --bg: #fdf6f0;
-    --text: #333333;
-    --accent: #d2691e; /* chocolate */
-    --accent-dark: #b35415;
-    --muted: #8b4513;
-    --card: #ffffff;
-    --radius: 12px;
-    --shadow: 0 8px 20px rgba(0,0,0,0.08);
-    --gap: 1rem;
-}
 *,
 *::before,
 *::after {
@@ -22,8 +11,8 @@ html, body {
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: #fdf6f0;
+    color: #333333;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     line-height: 1.45;
@@ -31,46 +20,45 @@ body {
 
 
 .heard-group {
-  gap: 0.6rem;
+    gap: 0.6rem;
 }
 
 .heard-group label {
-  flex: 1 1 45%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.6rem;
-  border-radius: 8px;
-  background: rgba(0,0,0,0.02);
-  cursor: pointer;
-  user-select: none;
-  transition: background 160ms ease, transform 120ms ease;
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.6rem;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.02);
+    cursor: pointer;
+    user-select: none;
+    transition: background 160ms ease, transform 120ms ease;
 }
 
 .heard-group label:hover {
-  background: rgba(0,0,0,0.04);
-  transform: translateY(-1px);
+    background: rgba(0,0,0,0.04);
+    transform: translateY(-1px);
 }
 
 .heard-group input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  margin: 0;
-  accent-color: var(--accent);
-  cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #d2691e;
+    cursor: pointer;
 }
 
 .heard-group input[type="checkbox"]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(210,105,30,0.14);
-  border-radius: 4px;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(210,105,30,0.14);
+    border-radius: 4px;
 
 }
 
 .hero {
-    
-    --hero-fallback: linear-gradient(180deg, #b36a35 0%, #dba97d 100%);
-    background: var(--hero-fallback);
+
+    background: linear-gradient(180deg, #b36a35 0%, #dba97d 100%);
     height: 40vh;
     display: flex;
     justify-content: center;
@@ -136,28 +124,28 @@ body {
 }
 
 form {
-    background-color: var(--card);
+    background-color: #ffffff;
     padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     width: 100%;
     max-width: 650px;
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: 1rem;
     animation: slideUp 700ms ease both;
 }
 
 h2 {
     margin: 0;
     font-size: 1.6rem;
-    color: var(--accent);
+    color: #d2691e;
 }
 
 h3 {
     margin: 0 0 1rem 0;
     font-weight: 400;
-    color: var(--muted);
+    color: #8b4513;
 }
 
 label {
@@ -182,7 +170,7 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: var(--accent);
+    border-color: #d2691e;
     box-shadow: 0 0 0 3px rgba(210,105,30,0.12);
 }
 
@@ -219,7 +207,7 @@ textarea:focus {
 
 button {
     padding: 0.8rem;
-    background-color: var(--accent);
+    background-color: #d2691e;
     color: #fff;
     font-size: 1.05rem;
     border: none;
@@ -229,7 +217,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--accent-dark);
+    background-color:#d2691e;
     transform: translateY(-1px);
 }
 
@@ -366,4 +354,17 @@ a:hover {
     top: 10px;
     right: 20px;
     font-size: 38px;
+}
+
+.success-message {
+    display: none;
+    color: #00B128FF;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #00871e;
+    border-radius: 5px;
+    text-align: center;
+}
+.success-message.show {
+    display: block;
 }

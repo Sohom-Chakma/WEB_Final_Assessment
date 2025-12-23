@@ -1,101 +1,281 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup | Bean & Co.</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sign up for exclusive updates, offers and events from our café.">
+    <title>Sign Up | Café</title>
+    <link rel="stylesheet" href="../../WEB1201/signup.css">
+    <link rel="icon" type="image/x-icon" href="../../WEB1201/images/logo 2 (1).png">
+
     <script>
-        function filterItems(category) {
-            const items = document.querySelectorAll('.item');
-            items.forEach(item => {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                } else if (item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+        function validateSignup(){
+            const form = document.getElementById('signupForm');
+            const message = document.getElementById('success-message');
 
-        function navOpen(){
-            document.getElementById("sidepanel").style.width="250px";
-        }
-        function navClose(){
-            document.getElementById("sidepanel").style.width="0";
-        }
+            // show success message
+            message.classList.add('show');
 
-        filterItems('all');
+            // Clear the input
+            form.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(function() {
+                message.classList.remove('show');
+            }, 5000);
+
+            // Prevents message from reloading
+            return false;
+        }
     </script>
+
+
 </head>
-
 <body>
+<a class="sr-only" href="#main">Skip to content</a>
 
-<main>
-    <header>
-        <div>BEAN & CO</div>
-        <div id="sidepanel" class="navsidepanel">
-            <a href="javascript:void(0)" class="closebtn" onclick="navClose()">&times;</a>
-            <a href="../homepage/homepage.html" id="menu">Home</a>
-            <a href="" id="menu">About Us</a>
-            <a href="" id="menu">Services</a>
-            <a href="team.html" id="menu">Team</a>
-            <a href="contact.html" id="menu">Contact Us</a>
-            <a href="login.html" id="menu">Login</a>
-            <a href="signup.html" id="menu">Sign Up</a>
-        </div>
-        <button class="openbtn" onclick="navOpen()"><img src="../images/menu-svgrepo-com.svg" width="40px" height="40px"></button>
-    </header>
+<header aria-hidden="false">
 
-    <section class="form-section">
-        <div class="form-card">
-            <div class="form-image" style="background-image: url('../images/signup-image.png');"></div>
-
-            <div class="form-container">
-                <h2>Register</h2>
-
-                <form id="signup-form">
-
-                    <div class="input-group">
-                        <input type="text" name="name" id="name" placeholder="Name" class="form-input">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="email" name="email" id="email" placeholder="Email" class="form-input">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="password" name="password" id="password" placeholder="Password" class="form-input">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="text" name="address" id="address" placeholder="Address" class="form-input">
-                    </div>
-
-                    <div class="input-group">
-                        <input type="text" name="phone" id="phone" placeholder="Phone Number" class="form-input">
-                    </div>
-
-                    <button type="submit" class="btn-submit">Register</button>
+</header>
 
 
-                </form>
+<section class="hero" aria-labelledby="hero-title">
+    <picture class="hero-media" aria-hidden="true">
+        <img src="../../WEB1201/images/logo 2 (1).png" sizes="(max-width:350px) 50vw, 1000px">
+        <img src="../../WEB1201/images/logo 2 (1).png" alt="" class="logo" decoding="async" loading="lazy">
+    </picture>
 
-                <div class="form-links">
-                    <p><a href="forgot-password.html">Forgot your password?</a></p>
-                    <p><a href="login.html">Return to login</a></p>
-                </div>
+    <div class="hero-content">
+        <h1 id="hero-title">Discover Your World of Flavours</h1>
+        <p>Sign up now to enjoy exclusive updates, special treats, and more!</p>
+    </div>
+</section>
+
+
+<main id="main">
+    <div class="form-container">
+        <form id="signupForm" action="#" method="post" aria-labelledby="signup-title" onsubmit="return validateSignup()">
+            <h2 id="signup-title">Sign Up Now!</h2>
+            <p class="lead">Join us to discover your world of flavours.</p>
+
+
+            <fieldset class="name-group" aria-describedby="name-help">
+                <legend class="sr-only">Full name</legend>
+                <input
+                        id="firstName"
+                        name="given-name"
+                        type="text"
+                        placeholder="First Name"
+                        autocomplete="given-name"
+                        pattern="[a-zA-Z]{1,50}"
+                        title="Letters only. 50 character limit."
+                        required>
+                <input
+                        id="middleName"
+                        name="additional-name"
+                        type="text"
+                        placeholder="Middle Name"
+                        autocomplete="additional-name"
+                        pattern="[a-zA-Z\s]{0,100}"
+                        title="Letters and spaces only. 100 character limit.">
+                <input
+                        id="lastName"
+                        name="family-name"
+                        type="text"
+                        placeholder="Last Name"
+                        autocomplete="family-name"
+                        pattern="[a-zA-Z]{1,50}"
+                        title="Letters only. 50 character limit."
+                        required>
+            </fieldset>
+
+
+            <div>
+                <label for="email" class="sr-only">Email address</label>
+                <input
+                        id="email"
+                        name="email" type="email"
+                        placeholder="Email"
+                        autocomplete="email"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        title="Requires a valid email format."
+                        required>
             </div>
+
+
+            <div class="phone-group">
+                <label for="areaCode" class="sr-only">Country code</label>
+                <select id="areaCode" name="areaCode" aria-label="Country code">
+                    <option value="+60">+60</option>
+                    <option value="+65">+65</option>
+                    <option value="+66">+66</option>
+                </select>
+
+                <label for="phoneNumber" class="sr-only">Phone number</label>
+                <input
+                        id="phoneNumber"
+                        name="tel"
+                        type="tel"
+                        placeholder="Phone Number"
+                        autocomplete="tel"
+                        pattern="[0-9]{10}"
+                        title="10 digits"
+                        required>
+            </div>
+
+
+
+
+            <fieldset class="address-group">
+                <legend class="sr-only">Address</legend>
+
+                <label for="addr1" class="sr-only">Street address line 1</label>
+                <input
+                        id="addr1"
+                        name="address-line1"
+                        type="text"
+                        placeholder="Street Address Line 1"
+                        autocomplete="address-line1"
+                        pattern="[a-zA-Z0-9\s.,#-]+"
+                        title="Enter a valid address."
+                        required>
+
+                <label for="addr2" class="sr-only">Street address line 2</label>
+                <input
+                        id="addr2"
+                        name="address-line2"
+                        type="text"
+                        placeholder="Street Address Line 2"
+                        pattern="[a-zA-Z0-9\s.,#-]+"
+                        title="Enter a valid address."
+                        autocomplete="address-line2">
+
+                <label for="city" class="sr-only">City</label>
+                <input
+                        id="city"
+                        name="address-level2"
+                        type="text"
+                        placeholder="City"
+                        autocomplete="address-level2"
+                        pattern="[a-zA-Z\s]{0,100}"
+                        title="Letters and spaces only. 100 character limit."
+                        required>
+
+                <label for="state" class="sr-only">State or province</label>
+                <select
+                        id="state"
+                        name="address-level1"
+                        type="text"
+                        placeholder="State / Province"
+                        autocomplete="address-level1"
+                        style="width: 60%"
+                        required>
+                    <option value=""disabled selected hidden>State</option>
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melaka">Melaka</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    <option value="Pahang">Pahang</option>
+                    <option value="Perak">Perak</option>
+                    <option value="Perlis">Perlis</option>
+                    <option value="Pulau Pinang">Pulau Pinang</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Terengganu">Terengganu</option>
+                </select>
+
+                <label for="postal" class="sr-only">Postal code</label>
+                <input
+                        id="postal"
+                        name="postal-code"
+                        type="text"
+                        placeholder="Zip / Postal Code"
+                        autocomplete="postal-code"
+                        pattern="[0-9]{5}"
+                        title="Enter a 5 digit code"
+                        required>
+            </fieldset>
+
+
+            <div class="dob-group">
+                <label class="sr-only" for="birthDay">Date of birth</label>
+                <select id="birthDay" name="birthDay" aria-label="Birth day" required></select>
+                <select id="birthMonth" name="birthMonth" aria-label="Birth month" required>
+                    <option value=""disabled selected hidden>Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="11">October</option>
+                    <option value="12">November</option>
+                    <option value="13">December</option>
+                </select>
+                <select id="birthYear" name="birthYear" aria-label="Birth year" required></select>
+            </div>
+
+
+            <fieldset class="heard-group">
+                <legend>Where did you hear about us?</legend>
+                <label for="heard_search"><input id="heard_search" name="heardAboutUs[]" type="checkbox" value="searchengine"> Search Engine</label>
+                <label for="heard_friend"><input id="heard_friend" name="heardAboutUs[]" type="checkbox" value="friend"> Friend</label>
+                <label for="heard_article"><input id="heard_article" name="heardAboutUs[]" type="checkbox" value="article/blog"> Article/Blog</label>
+                <label for="heard_institution"><input id="heard_institution" name="heardAboutUs[]" type="checkbox" value="institution"> Institution</label>
+                <label for="heard_other"><input id="heard_other" name="heardAboutUs[]" type="checkbox" value="other"> Other</label>
+            </fieldset>
+            <button type="submit">Sign Up</button>
+
+            <!-- log into your account -->
+            <div class="input-row">
+                <a href="login.html">Already have an account? Log in here.</a>
+            </div>
+        </form>
+        <div class="form-container">
         </div>
-    </section>
 
-    <footer>
-        <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
-    </footer>
-
+        <div id="success-message" class="success-message">
+            Confirmation sent to your email address.
+        </div>
+    </div>
 </main>
 
+<script>
+    // Populate day (1-31) and year (e.g., 1900..currentYear)
+    (function populateDOB(){
+        var day = document.getElementById('birthDay');
+        var year = document.getElementById('birthYear');
+        if(!day || !year) return;
+        /* Add Placeholder for Day, also */
+        var defaultDay = document.createElement('option');
+        defaultDay.value = "";
+        defaultDay.text = "Day";
+        defaultDay.disabled = true;
+        defaultDay.selected = true;
+        defaultDay.hidden = true;
+        day.appendChild(defaultDay);
+        for(var d=1; d<=31; d++){
+            var opt = document.createElement('option');
+            opt.value = d; opt.textContent = d; day.appendChild(opt);
+        }
+        var currentYear = new Date().getFullYear();
+        var defaultYear = document.createElement('option');
+        defaultYear.value = "";
+        defaultYear.text = "Year";
+        defaultYear.disabled = true;
+        defaultYear.selected = true;
+        defaultYear.hidden = true;
+        year.appendChild(defaultYear);
+        for(var y=currentYear; y>=1900; y--){
+            var opt = document.createElement('option');
+            opt.value = y; opt.textContent = y; year.appendChild(opt);
+        }
+    })();
+</script>
 </body>
 </html>
