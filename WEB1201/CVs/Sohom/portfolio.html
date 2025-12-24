@@ -1,106 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio | Sohom Chakma</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="../../team.html" class="back-link">← Back to Team</a>
-  </div>
-  </div>
-</nav>
-
-<header id="home" class="hero-section">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Hello, I'm <span class="highlight-text">Sohom Chakma</span></h1>
-      <p class="role">BSc (Hons) Computer Science Student @Sunway University</p>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="text-content">
-          <p>
-            I am a passionate undergraduate student with a strong interest in web development and design.
-            I enjoy watching football and spend my time working on analytical projects.
-          </p>
-          <p>
-            My focus is on writing clean code and learning new technologies to improve functionality and aesthetics.
-          </p>
+    <!--NAVIGATION BAR-->
+    <nav>
+        <div class="left">
+            <a href="/">My Portfolio</a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="skills" class="section alt-bg">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>HTML & CSS</h3>
-          <p>Flexbox, Grid, and Responsive Design, Forms and Validation.</p>
-        </div>
-        <div class="skill-card">
-          <h3>Data Analytics</h3>
-          <p>Database Querying, Visualization, ML, Statistical Analysis.</p>
-        </div>
-        <div class="skill-card">
-          <h3>Tools</h3>
-          <p>Git, GitHub, Webstorm, PyCharm and Google Colab.</p>
-        </div>
-        <div class="skill-card">
-          <h3>Soft Skills</h3>
-          <p>Teamwork, Communication, and Problem Solving.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="right">
+            <a href="https://github.com/Sohom-Chakma" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-square-github" style="color: #4e3b22;"></i>
+                <span>Github</span>
+            </a>
 
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Project Contributions</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <h3>Web Development Assignment</h3>
-          <ul>
-            <li>Designed Login, Signup, Forgot-Password, and Teams pages using HTML5, CSS and JavaScript.</li>
-            <li>Form validation in pure HTML and JavaScript.</li>
-            <li>Collaborated with team members on design consistency and structure.</li>
-          </ul>
+            <a href="mailto:example@email.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-thin fa-at" style="color: #f3d5b5;"></i>
+                <span>Email</span>
+            </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="contact" class="section alt-bg">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <div class="contact-wrapper">
-        <p>Feel free to reach out for collaborations or questions.</p>
-        <div class="contact-links">
-          <a href="mailto:sohomchakma@gmail.com" class="contact-btn">📧 Email Me</a>
-          <a href="tel: +600123456789" class="contact-btn">📞 Call Me</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-</main>
+    <main>
+        <!--HERO-->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h2>My name is Sohom Chakma 🤠</h2>
+                <p>I build technical solutions at the intersection of web development, data analytics, and sports performance. By combining full-stack engineering with data modeling, I create interactive platforms that translate athletic metrics into actionable visual intelligence. My work focuses on engineering high-performance applications that manage large datasets through intuitive interfaces. From predictive modeling to responsive athlete-tracking dashboards, I prioritize technical efficiency and data integrity to bridge the gap between digital architecture and competitive physical performance.</p>
+                <div class="links">
+                    <a href="#skills">
+                        <i class="fa-solid fa-toolbox" style="color: #4e3b22;"></i>
+                        <span>Skills</span>
+                    </a>
 
-<footer>
-  <p>&copy; 2025 Sohom Chakma. All Rights Reserved.</p>
-</footer>
+                    <a href="#contributions">
+                        <i class="fa-solid fa-pen-to-square" style="color: #4e3b22;"></i>
+                        <span>Contributions</span>
+                    </a>
+
+                    <a href="#contact">
+                        <i class="fa-solid fa-pen-to-square" style="color: #4e3b22;"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="headshot">
+                <img src="images/headshot-image.png" alt="Headshot of Sohom Chakma">
+            </div>
+        </section>
+
+        <!--SKILLS-->
+        <section class="skills-section" id="skills">
+            <h2>Skills</h2>
+            <div class = "skills-text">
+                I build technical solutions at the intersection of web development, data analytics, and sports performance. By combining full-stack engineering with data modeling, I create interactive platforms that translate athletic metrics into actionable visual intelligence. My work focuses on engineering high-performance applications that manage large datasets through intuitive interfaces. From predictive modeling to responsive athlete-tracking dashboards, I prioritize technical efficiency and data integrity to bridge the gap between digital architecture and competitive physical performance.
+            </div>
+
+            <div class="skill-cards">
+                <div class="card">
+                    <p class="skill-text-icon">📊</p>
+                    <h3>Data Analytics</h3>
+                    <p>Database Querying, Visualization, ML, Statistical Analysis.</p>
+                </div>
+                <div class="card">
+                    <p class="skill-text-icon">🌐</p>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS & JavaScript.</p>
+                </div>
+                <div class="card">
+                    <p class="skill-text-icon">🔨</p>
+                    <h3>Tools</h3>
+                    <p>Git, GitHub, Webstorm, PyCharm and Google Colab.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!--CONTRIBUTIONS-->
+        <section class="contributions-section" id="contributions">
+            <h2 class="section-title">Project Contributions</h2>
+            <div class="project-list">
+                <ul>
+                    <li>Designed Login, Signup, Forgot-Password, and Teams pages using HTML5, CSS and JavaScript.</li>
+                    <li>Form validation in pure HTML and JavaScript.</li>
+                    <li>Collaborated with team members on design consistency and structure.</li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+        <!--CONTACT-->
+        <section class="contact-section" id="contact">
+            <div class="contact-group">
+
+                <div class="form-header">
+
+                    <div class="header-left">
+                        <h2>Contact Me</h2>
+                    </div>
+
+                    <div class="header-right">
+                        <h2 class="form-text-icon">📫</h2>
+                    </div>
+
+                </div>
+
+
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" required rows="10"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p><small>&copy; 2025 . All Rights Reserved.</small></p>
+        </footer>
+    </main>
 </body>
 </html>
