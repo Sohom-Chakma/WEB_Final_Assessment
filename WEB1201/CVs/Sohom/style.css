@@ -88,7 +88,7 @@ nav .right span {
     padding: 0 40px;
     align-items: center;
     gap: 40px;
-    border-radius: 50px;
+    border-radius: 20px;
     background: #f3d5b5;
     box-shadow: -20px 20px 60px rgb(207, 181, 154), 20px -20px 60px rgb(255, 245, 208);
 }
@@ -134,8 +134,8 @@ nav .right span {
 
 .hero-section .headshot img {
     width: 350px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
 }
 
@@ -187,8 +187,8 @@ nav .right span {
 .contributions-section {
     border-radius: 20px;
     background: #f3d5b5;
-    box-shadow: inset 20px 20px 59px #cfb59a,
-    inset -20px -20px 59px #fff5d0;
+    box-shadow: inset -5px 5px 10px #cfb59a,
+    inset 5px -5px 10px #fff5d0;
     text-align: center;
     padding: 50px;
 }

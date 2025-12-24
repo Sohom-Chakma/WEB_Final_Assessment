@@ -16,6 +16,12 @@
             document.getElementById("sidepanel").style.width="0";
         }
         function validateForm(){
+
+            var email = document.getElementById('email-input').value;
+
+            localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('userEmail', email);
+
             return true;
         }
     </script>

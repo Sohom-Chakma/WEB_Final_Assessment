@@ -36,6 +36,12 @@
         <a href="signup.html" id="menu">Sign Up</a>
     </div>
 
+    <!-- WELCOME MESSAGE for login simulation -->
+    <div id="welcome-banner" style="display:none;">
+        <p>Welcome back, <span id="user-email"></span>!</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
     <button class="openbtn" onclick="navOpen()">
         <img src="images/menu-svgrepo-com.svg" width="40px" height="40px">
     </button>
@@ -148,6 +154,24 @@
 <footer>
     <p><small>&copy; 2025 WEB1201 Group Project. All Rights Reserved.</small></p>
 </footer>
+    <script>
+        // Check login state on page load
+        (function checkLoginState(){
+            var loggedIn = localStorage.getItem('loggedIn');
+            var userEmail = localStorage.getItem('userEmail');
 
+            if(loggedIn === 'true' && userEmail){
+                document.getElementById('welcome-banner').style.display = 'flex';
+                document.getElementById('user-email').textContent = userEmail;
+            }
+        })();
+
+        // Logout function
+        function logout(){
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('userEmail');
+            document.getElementById('welcome-banner').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

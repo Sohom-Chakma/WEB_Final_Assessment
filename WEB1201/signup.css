@@ -1,3 +1,8 @@
+/*BASE*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
 }
@@ -180,8 +185,9 @@ textarea:focus {
 
 .name-group input,
 .address-group input {
-    flex: 1 1 30%;
-    min-width: 120px;
+    flex: 1;
+    min-width: 0;
+
 }
 
 .phone-group select {
@@ -189,7 +195,8 @@ textarea:focus {
 }
 
 .phone-group input {
-    flex: 1 1 75%;
+    flex: 1;
+    min-width: 0;
 }
 
 .dob-group select {
@@ -256,7 +263,10 @@ a:hover {
 @media (max-width: 600px) {
     .name-group input,
     .address-group input,
-    .dob-group select {
+    .address-group select,
+    .dob-group select,
+    .phone-group input,
+    .phone-group select {
         flex: 1 1 100%;
     }
 

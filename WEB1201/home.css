@@ -382,3 +382,51 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* WELCOME BANNER */
+#welcome-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f3d5b5;
+}
+
+#welcome-banner p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#welcome-banner button {
+    padding: 5px 12px;
+    background-color: #a9744f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+#welcome-banner button:hover {
+    background-color: #8a5e3f;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        min-height: 60vh;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    #welcome-banner {
+        flex-direction: column;
+    }
+}
