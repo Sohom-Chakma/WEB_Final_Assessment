@@ -90,7 +90,7 @@ nav .right span {
     gap: 40px;
     border-radius: 20px;
     background: #f3d5b5;
-    box-shadow: -20px 20px 60px rgb(207, 181, 154), 20px -20px 60px rgb(255, 245, 208);
+    box-shadow: -5px 5px 10px rgb(207, 181, 154), 5px -5px 10px rgb(255, 245, 208);
 }
 
 .hero-section .hero-text h2 {
@@ -177,7 +177,7 @@ nav .right span {
     aspect-ratio: 1 / 1;
     display: inline-flex;
     padding: 10px;
-    box-shadow: -20px 20px 60px rgb(207, 181, 154), 20px -20px 60px rgb(255, 245, 208);
+    box-shadow: -5px 5px 10px rgb(207, 181, 154), 5px -5px 10px rgb(255, 245, 208);
     border-radius: 50%;
     margin-bottom: 30px;
 
